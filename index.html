@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>CAMPASS 朗录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- build:css css/base.min.css -->
+    <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet">
+    <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="assets/global/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+    <link href="assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet">
+    <link href="css/loading.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="assets/global/css/components.min.css" rel="stylesheet">
+    <link href="assets/global/css/plugins.min.css" rel="stylesheet">
+    <link href="assets/layouts/layout4/css/layout.min.css" rel="stylesheet">
+    <link href="assets/layouts/layout4/css/default.min.css" rel="stylesheet">
+    <link href="css/datatables.min.css" rel="stylesheet">
+    <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet">
+    <!-- endbuild -->
+    
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner ">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="/home.html">
+                    <img src="img/campass.png" alt="logo" class="logo-default" style="width:160px;" />
+                </a>
+                <div class="menu-toggler sidebar-toggler">
+                    <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <div class="btn-group green" style="margin-top:6px;">
+                <button class="btn green btn-outline dropdown-toggle control" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <e data-i18n="porlet_change">模块切换</e>
+                    <i class="fa fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-menu role_menu" role="menu"></ul>
+            </div>
+            <!-- BEGIN PAGE TOP -->
+            <div class="page-top">
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="separator hide"></li>
+                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                        <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                        <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-success messageNum">
+                                                    0
+                                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                                        <span class="bold messageNum">0</span>
+                                                        <e data-i18n="porlet_notifications">条 未读信息</e>
+                                                    </h3>
+                                    <a href="#/notice" data-i18n="porlet_viewAll">查看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller indexMessage" id="initMesInfo" style="height: 250px;" data-handle-color="#637283"></ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END NOTIFICATION DROPDOWN -->
+                        <li class="separator hide"></li>
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-user dropdown-dark">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="username username-hide-on-mobile"></span>
+                                <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+                                <img class="img-circle avatar" style="height:39px;width:39px;" src="img/avatar.png" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="#/options">
+                                        <i class="icon-user"></i>
+                                        <e data-i18n="porlet_User">
+                                            个人设置</e>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#/check">
+                                        <i class="icon-credit-card"></i>
+                                        <e data-i18n="porlet_Bill">
+                                            我的账单
+                                        </e>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="javascript:;" id="lock">
+                                        <i class="icon-lock"></i>
+                                        <e data-i18n="porlet_LockScreen">
+                                            暂时离开
+                                        </e>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" id="exit">
+                                        <i class="icon-key"></i>
+                                        <e data-i18n="porlet_LogOut">
+                                            注销账户
+                                        </e>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END PAGE TOP -->
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+    <div class="clearfix"></div>
+    <!-- END HEADER & CONTENT DIVIDER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar-wrapper">
+            <!-- BEGIN SIDEBAR -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"></ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content"></div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN QUICK SIDEBAR -->
+        <a href="javascript:;" class="page-quick-sidebar-toggler">
+            <i class="icon-login"></i>
+        </a>
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <p>
+            <i data-i18n="string_copy">2016-2017 &copy;</i>&nbsp;<a href="http://www.open01.com" target="_blank" data-i18n="strin_company">北京开数科技有限公司</a>&nbsp;<i data-i18n="string_copyright">版权所有&nbsp;京ICP备16025114号</i>
+            &nbsp;&nbsp;<img src="img/icon-police.png" style="vertical-align: middle;margin-top: -3px;margin-right: 3px;" /><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802023241">京公网安备 11010802023241号</a>
+            
+        </p>
+        <p>
+            <a href="/static/agreement.html" target="_blank" data-i18n="string_agreementQ">服务协议</a>&nbsp;|&nbsp;<a href="/static/license.html" target="_blank" data-i18n="string_licenseQ">软件许可</a>&nbsp;|&nbsp;<a href="/static/privacy.html" target="_blank" data-i18n="string_policyQ">隐私条款</a>
+        </p>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <div class="loadingBox fakeloader" style="background-color:#dfdfdf;position:fixed;top:0px;left:0px;right:0px;bottom:0px;z-index:9999999;">
+        <img style="position:absolute;left:50%;top:30%;margin:-14px 0 0 -150px;width:300px;" src="img/campass.png">
+        <div class="fl spinner1" style="position: absolute; left: 50%; top: 40%;width:40px;height:40px;margin:-20px 0 0 -20px;">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <div class="loginStep" style="width:100%;text-align:center;position:absolute;top:50%;">
+            <span class="loginStep_1"></span>
+            <BR/>
+            <span class="loginStep_2"></span>
+            <BR/>
+            <span class="loginStep_3" style="display:none;">正在载入界面，请稍后...</span>
+        </div>
+    </div>
+    <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script>
+        <script src="assets/global/plugins/ie8.fix.min.js"></script>
+    <![endif]-->
+    <!-- build:js js/lib.min.js -->
+    <script src="assets/global/plugins/jquery.min.js"></script>
+    <script src="js/lib/jquery.cookie.js"></script>
+    <script src="js/lib/underscore.js"></script>
+    <script src="js/lib/backbone.js"></script>
+    <script src="js/lib/jquery.i18n.properties.min.js"></script>
+    <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/global/plugins/js.cookie.min.js"></script>
+    <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="js/lib/spin.min.js"></script>
+    <script src="js/lib/ladda.min.js"></script>
+    <script src="assets/global/plugins/moment.min.js"></script>
+    <script src="assets/global/plugins/counterup/jquery.counterup.js"></script>
+    <script src="assets/global/plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="js/lib/swiper.js"></script>
+    <script src="js/lib/jquery.dataTables.js"></script>
+    <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+    <script src="assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
+    <script src="assets/global/scripts/app.min.js"></script>
+    <script src="assets/layouts/layout4/scripts/layout.js"></script>
+    <!-- endbuild -->
+
+    <script src="js/lib/echarts.min.js"></script>
+    <script src="js/international.js"></script>
+    <script src="js/lib/require.js" type="text/javascript" charset="utf-8" data-main="js/main.js"></script>
+</body>
+
+</html>
+

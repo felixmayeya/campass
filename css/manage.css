@@ -1,0 +1,201 @@
+.contentDiv {
+    position: relative;
+    font-size: 14px;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle!important;
+    white-space:nowrap!important;
+}
+
+.table>tbody>tr>td:nth-of-type(2), .table>tbody>tr>td:nth-of-type(6) {
+    text-align: center;
+}
+
+/* .table tr:last-of-type>th:nth-of-type(7),
+.table tr:last-of-type>th:nth-of-type(8),
+.table tr:last-of-type>th:nth-of-type(9),
+.table tr:last-of-type>th:nth-of-type(10),
+.table tr:last-of-type>th:nth-of-type(11){
+	background:#f7f7f7;
+}
+.table tr:first-of-type>th:last-of-type{
+	background:#f7f7f7;
+}
+.table tr>td:nth-of-type(7),
+.table tr>td:nth-of-type(8),
+.table tr>td:nth-of-type(9),
+.table tr>td:nth-of-type(10),
+.table tr>td:nth-of-type(11){
+	background:#f7f7f7;
+} */
+
+.toolbar {
+    display: inline-block;
+}
+
+.p_buttonx {
+    position: relative;
+    text-align: center;
+}
+
+.ccc {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    width: 120px;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ddd {
+    display: block;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 24px;
+}
+
+#savebtn {
+    margin-top: 20px;
+}
+
+.dataTables_length {
+    height: 30px;
+    line-height: 30px;
+    padding-top: 3px;
+    color: #678098!important;
+}
+
+.dataTables_length select {
+    width: 50px;
+    margin: 0 10px;
+    height: 30px;
+    color: #678098!important;
+}
+
+.dataTables_info {
+    line-height: 30px;
+    padding-bottom: 10px;
+    color: #678098!important;
+}
+
+#source_filter, #source_paginate a {
+    color: #678098!important;
+}
+
+.td1 {
+    position: relative;
+    padding: 0 10px;
+}
+
+.td1 div {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.fen {
+    text-align: center;
+    font-size: 14px;
+}
+
+.fenn {
+    width: 120px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.td1 div:first-of-type {
+    display: block;
+}
+
+.shou_fang {
+    display: block;
+    background: url(../img/tran.png) center center no-repeat;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.ccc {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    z-index: 500;
+}
+
+.modal-dialog {
+    width: 300px;
+    margin-top: 20%;
+    z-index: 501;
+}
+
+.modal-body ul li {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.modal-body .icheckbox_square-blue {
+    margin-right: 10px;
+}
+
+.modal-backdrop {
+    z-index: 100;
+}
+
+.modal {
+    z-index: 501;
+}
+
+.modal-dialog {
+    z-index: 502;
+}
+
+.box2 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+    display: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.round {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 240px;
+    margin-left: -100px;
+    margin-top: -120px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 240px;
+}

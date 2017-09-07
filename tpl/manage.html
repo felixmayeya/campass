@@ -1,0 +1,121 @@
+<link rel="stylesheet" type="text/css" href="css/manage.css">
+<link href="assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<style>
+	tr>td:nth-of-type(7),
+	tr>th:nth-of-type(7) {
+		border-left: 2px solid #e7ecf1;
+	}
+
+	tr>td:nth-of-type(5) {
+		text-align: center;
+	}
+</style>
+<div class="page-head">
+	<div class="page-title">
+		<h1 data-i18n="manage_resource">资源管理</h1>
+	</div>
+</div>
+<div class="page-head row" style="color:#678098!important">
+	<div class="col-xs-3" style="text-indent:2em;">
+		<i data-i18n="manage_already">已建项目：</i><span id="xxx"></span>
+	</div>
+	<div class="col-xs-8 row">
+		<div class="col-xs-4" style="text-align:center;"><i data-i18n="manage_used">已上传数据</i> <span id="used_data_size"></span>/<span id="totol_data_size"></span></div>
+		<div class="progress progress-striped col-xs-5" style="padding:0;margin:0;" id="p_total">
+			<div class="progress-bar progress-bar-info" role="progressbar" id="p_used">
+				<span class="sr-only"> <span id="used_per"></span> Used </span>
+			</div>
+		</div>
+		<div class="col-xs-3" style="text-align:center;"><i data-i18n="manage_left">剩余</i> <span id="left_data_size"></span></div>
+	</div>
+</div>
+<div class="row" style="margin-top:10px;" style="color:#678098!important">
+	<div class="col-xs-12">
+		<div class="portlet light portlet-fit portlet-datatable bordered">
+			<div class="portlet-title">
+				<div class="caption">
+					<span class="caption-subject font-dark sbold uppercase" style="color:#678098!important" data-i18n="manage_list">资源列表</span>
+				</div>
+				<div class="actions dt-buttons">
+					<button class="dt-button btn blue btn-outline" id="add_pro" data-toggle="modal" data-target="#newModal">
+											<span data-i18n="manage_newP">新建项目</span>
+										</button>
+					<button class="dt-button btn red btn-outline" id="delete_select">
+											<span data-i18n="manage_deleteP">删除选中</span>
+										</button>
+					<button class="dt-button btn green btn-outline" id="c_pdf">
+											<span>PDF</span>
+										</button>
+					<button class="dt-button btn purple btn-outline" id="c_csv">
+											<span>CSV</span>
+										</button>
+				</div>
+			</div>
+			<div class="portlet-body">
+						<!--startprint-->
+						<table class="table table-responsive dataTabletableSort table-striped" id="source" style="color:#678098!important">
+							<thead>
+								<tr>
+									<th colspan="6" data-i18n="manage_project">项目</th>
+									<th colspan="5" style="text-align:center" data-i18n="manage_file">数据</th>
+								</tr>
+								<tr>
+									<!-- 这复选框是有全选功能的，而且它与表头的换行问题没有任何关系，请勿随意删除，谢谢 -->
+									<th class="table-checkbox sorting_disabled">
+										<div class="fen">
+											<input type="checkbox" class="allsel">
+										</div>
+									</th>
+									<th data-i18n="manage_status">状态</th>
+									<th data-i18n="manage_proname">名称</th>
+									<th data-i18n="manage_des">描述</th>
+									<th data-i18n="manage_cretime">创建日期 </th>
+									<th data-i18n="manage_control">操作</th>
+									<th data-i18n="manage_filename">名称</th>
+									<th data-i18n="manage_type">类型</th>
+									<th data-i18n="manage_uptime">上传日期</th>
+									<th data-i18n="manage_losetime">失效日期</th>
+									<th data-i18n="manage_size">大小</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+						<!--endprint-->
+					<!-- <div class="row">
+						<div class="col-md-12 col-sm-12" style="text-align:right;">
+							<button type="button" class="btn blue" id="savebtn">保存并处理</button>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<!-- END EXAMPLE TABLE PORTLET-->
+	</div>
+
+</div>
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="color:#678098!important">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="newModalLabel" data-i18n="manage_new">新建项目</h4>
+			</div>
+			<div class="modal-body form-group" style="padding: 15px 15px 0px 15px;margin-bottom:0px;">
+				<input type="text" class="form-control" data-place="manage_prname" placeholder="项目名称" id="new_name" maxlength='20' />
+				<label class="control-label"></label>
+			</div>
+			<div class="modal-body form-group" style="padding: 15px 15px 0px 15px;">
+				<input type="text" class="form-control" data-place="manage_prdes" placeholder="项目描述" id="new_des" maxlength='30' />
+				<label class="control-label"></label>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="manage_quit">取消</button>
+				<button type="button" class="btn btn-primary" id="go_sumb" data-i18n="manage_submit">提交</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal -->
+</div>

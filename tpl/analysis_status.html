@@ -1,0 +1,229 @@
+<style>
+.swiper-slide {
+    height: 580px;
+    background-color: #fff;
+    overflow: hidden;
+}
+</style>
+<div class="page-head">
+    <div class="page-title">
+        <h1 id="analysisTitle" data-i18n="analysis_status_title">访问请求分析-HTTP响应状态码</h1>
+    </div>
+</div>
+<div class="analysisPageHead page-head breadcrumb">
+    <select id="selectPro" class="analysisPro_choose" data-style="btn border-blue font-blue btn-default dropdown-toggle">
+        <option value="" data-fileid="0" data-id="" data-i18n=analysis_emptyproject></option>
+    </select>
+    <div id="reportrange" class="btn border-blue font-blue btn-default dropdown-toggle">
+        <i class="fa fa-calendar"></i> &nbsp;
+        <span></span>
+        <b class="fa fa-angle-down"></b>
+    </div>
+    <div class="page-toolbar">
+        <button type="button" class="btn blue-hoki btn-outline uppercase" id="dataListBtn" data-i18n="analysis_viewData">数据明细</button>
+        <button type="button" class="btn green btn-outline uppercase" id="addChart" data-i18n="analysis_addtodashboard">+到首页</button>
+    	<button type="button" class="btn purple-soft btn-outline uppercase" data-i18n="analysis_search_page" id="analysisToSearchBtn">智能搜索</button>
+    </div>
+</div>
+<div class="portlet swiperBox tabbable-custom nav-justified">
+    <ul class="controlList swiper-pagination"></ul>
+    <div class="portlet swiper-container v-swiper swiper-no-swiping">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB echarts_bar1 vertical_bar" style="display:block;width:100%;height:78%">
+                    </div>
+                    <ul class="smChartsImgBox row smCharts-0">
+                    </ul>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-0">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps">序号</th>
+                                    <th class="sorting" data-i18n="analysis_HttpCode">状态码</th>
+                                    <th class="sorting" data-i18n="analysis_Frequency">该状态出现次数</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB echarts_bar2 swiperB_full mc_line" style="display:block;width:100%;height:100% !important;">
+                    </div>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-1">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps">序号</th>
+                                    <th class="sorting" data-i18n="analysis_TimeStamp">时间</th>
+                                    <th class="sorting" data-i18n="analysis_Frequency">该状态出现次数</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB swiperB_full mc_bar_status_url" style="height:100% !important;">
+                        <div class="echarts_vBar2" draggable="false">
+                        </div>
+                        <div class="echarts_lBar2">
+                        </div>
+                    </div>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-2">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps">序号</th>
+                                    <th class="sorting">URL</th>
+                                    <th class="sorting" data-i18n="analysis_Frequency">该状态出现次数</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB swiperB_full mc_bar_status" style="height:100% !important;">
+                        <div class="echarts_vBar3" draggable="false">
+                        </div>
+                        <div class="echarts_lBar3">
+                        </div>
+                    </div>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-3">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps">序号</th>
+                                    <th class="sorting">IP</th>
+                                    <th class="sorting" data-i18n="analysis_Frequency">该状态出现次数</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="general">
+    <div class="swiperT row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-green-sharp">
+                                                                <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                                 <small class="font-green-sharp">%</small>
+                                                        </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_status_ProportionofSuccess">访问成功(2XX状态码)</small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-emoticon-smile"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-haze">
+                                                             <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                                 <small class="font-red-haze">%</small>
+                                                        </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_status_ProportionofRedirection">访问重定向(3XX状态码)</small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-action-redo"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-blue-sharp">
+                                                                <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                             <small class="font-blue-sharp">%</small>
+                                                        </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_status_ProportionofFailed">请求错误(4XX状态码)</small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-bell"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-purple-soft">
+                                                                <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                                 <small class="font-purple-soft">%</small>
+                                                        </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_status_ProportionofServerFailed">服务器错误(5XX,6XX状态码)</small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-info"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<iframe id="printReportIframe" target="_blank"></iframe>

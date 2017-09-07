@@ -1,0 +1,1 @@
+define(["text!/tpl/analysis_status.html","chart","smChart","css!/css/analysis.css","analysis","statusCharts"],function(s,a,t){function n(){swiper=void 0,cvrPageMark=0,$(".page-content").html(s),analysis(a,t),changeLanguage("analysis"),statusBtn(a,t)}return{render:n}});

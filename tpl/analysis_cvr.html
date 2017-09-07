@@ -1,0 +1,145 @@
+<style>
+.swiper-slide {
+    height: 580px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.swiperImg .bootstrap-select {
+    width: auto !important;
+}
+
+.swiperImg .bootstrap-select .filter-option {
+    font-size: 14px;
+}
+</style>
+<div class="page-head">
+    <div class="page-title">
+        <h1 id="analysisTitle" data-i18n="analysis_cvr_title">转化率分析</h1>
+    </div>
+</div>
+<div class="analysisPageHead page-head breadcrumb">
+    <select id="selectPro" class="analysisPro_choose" data-style="btn border-blue font-blue btn-default dropdown-toggle">
+        <option value="" data-fileid="0" data-id="" data-i18n="analysis_emptyproject"></option>
+    </select>
+    <div id="reportrange" class="btn border-blue font-blue btn-default dropdown-toggle">
+        <i class="fa fa-calendar"></i> &nbsp;
+        <span></span>
+        <b class="fa fa-angle-down"></b>
+    </div>
+    <div class="page-toolbar">
+        <button type="button" class="btn blue-hoki btn-outline uppercase" id="dataListBtn" data-i18n="analysis_viewData">数据明细</button>
+        <button type="button" class="btn default disabled" id="addChart" data-i18n="analysis_addtodashboard">+到首页</button>
+        <button type="button" class="btn purple-soft btn-outline uppercase" data-i18n="analysis_search_page" id="analysisToSearchBtn">智能搜索</button>
+    </div>
+</div>
+<div class="portlet swiperBox tabbable-custom nav-justified">
+    <ul class="controlList swiper-pagination"></ul>
+    <div class="portlet swiper-container v-swiper swiper-no-swiping">
+        <div class="cvrBox swiper-wrapper">
+            <div class="cvrBox_line2 col-md-12" style="display: none;">
+                <div class="note note-success">
+                    <h4 class="block" data-i18n="analysis_cvr_noprocess">您还没有设置转化流程</h4>
+                    <p>
+                        <e data-i18n="analysis_cvr_processExp">说明：首次使用转化率分析报表 请预先设置转化流程。</e>
+                        <a id="optionCvr" style="text-decoration: underline;" data-i18n="analysis_cvr_goProcess">设置转化流程</a>
+                    </p>
+                </div>
+            </div>
+            <!--设置转化流程-->
+            <div class="cvrBox_line3 col-md-12" style="display: none;">
+                <div class="countent">
+                    <div class="cvrBtnBox table-toolbar">
+                        <button class="cvrAddBtn btn btn-primary" data-i18n="analysis_cvr_addcvrstep">
+                            添加转化流程
+                        </button>
+                        <button class="cvrRemoveBtn btn btn-danger" data-i18n="analysis_cvr_cancelcvrstep">
+                            移除转化流程
+                        </button>
+                        <button class="cvrSaveBtn btn btn-success" data-i18n="analysis_cvr_saveprocess">
+                            保存转化流程
+                        </button>
+                    </div>
+                    <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="cvrDataTable">
+                        <col style="width: 15%" />
+                        <col style="width: 35%" />
+                        <col style="width: 50%" />
+                        <tr>
+                            <th data-i18n="analysis_cvr_Step">序号</th>
+                            <th data-i18n="analysis_cvr_description">描述(*必填)</th>
+                            <th data-i18n="analysis_cvr_url">URL(*必填)</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <e data-i18n="analysis_cvr_Step">步骤</e><span>1</span></td>
+                            <td>
+                                <input type="text" name="cvrText1" id="cvrText1" value="" placeholder="请输入URL的描述" data-place="analysis_cvr_placeholder1" />
+                            </td>
+                            <td>
+                                <input type="url" name="cvrText1" id="cvrText1" value="" placeholder="请输入想要分析的URL" data-place="analysis_cvr_placeholder2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <e data-i18n="analysis_cvr_Step">步骤</e><span>2</span></td>
+                            <td>
+                                <input type="text" name="cvrText1" id="cvrText1" value="" placeholder="请输入URL的描述" data-place="analysis_cvr_placeholder1" />
+                            </td>
+                            <td>
+                                <input type="url" name="cvrText1" id="cvrText1" value="" placeholder="请输入想要分析的URL" data-place="analysis_cvr_placeholder2" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="cvrBox_line4" style="display: block;width:100%;">
+                <div class="swiper-slide" style="height: 100%;width:100%;">
+                    <div class="swiperImg">
+                        <div class="col-md-12" style="z-index:100;">
+                            <button class="cvrTime btn blue btn-outline" data-i18n="analysis_cvr_time">时间轨迹</button>
+                            <button class="cvrAddres btn blue btn-outline" data-i18n="analysis_cvr_region">地域分析</button>
+                            <button class="cvrBrowser btn blue btn-outline" data-i18n="analysis_cvr_browser">浏览器</button>
+                            <button class="cvrOs btn blue btn-outline" data-i18n="analysis_cvr_operatingsystem">操作系统</button>
+                            <select id="selectMapType" data-style="btn border-blue font-blue btn-default dropdown-toggle">
+                                <option value="China" data-i18n='analysis_cvr_china'></option>
+                                <option value="" data-i18n='analysis_cvr_world'></option>
+                            </select>
+                            <button class="cvrBack btn blue btn-outline" style="float: right;" data-i18n="analysis_cvr_customprocess">编辑转化流程</button>
+                            <span style="font-size:20px;font-weight: bold;margin-left:2em;color:#678098;line-height: 36px;vertical-align: middle;"><span  style="font-size:20px;font-weight: bold;" data-i18n="analysis_cvr_totalconversion">总转化率：</span><span class="cvrCount">0%</span></span>
+                        </div>
+                        <div class="echarts_funnel" style="height:100%;">
+                        </div>
+                        <div class="echarts_more"></div>
+                    </div>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="dataTable">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="analysis_cvr_Step">步骤</th>
+                                    <th>URL1</th>
+                                    <th>URL2</th>
+                                    <th data-i18n="analysis_cvr_title">转化率</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="general">
+</div>
+<div class="box2" id="loadbox">
+</div>
+<iframe id="printReportIframe" target="_blank"></iframe>

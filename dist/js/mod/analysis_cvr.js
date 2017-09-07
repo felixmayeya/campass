@@ -1,0 +1,1 @@
+define(["text!/tpl/analysis_cvr.html","css!/css/analysis.css","analysis","cvrCharts"],function(s){function a(){swiper=void 0,cvrPageMark=1,$(".page-content").html(s),analysis(),changeLanguage("analysis"),cvrBtn()}return{render:a}});

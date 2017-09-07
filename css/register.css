@@ -1,0 +1,211 @@
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+section::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+footer {
+    height: 25px;
+    width: 100%;
+    background-color: #fff;
+    color: #999999;
+    text-align: center;
+    line-height: 25px;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #dedede;
+    font-size: 12px;
+}
+
+footer span>span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+html {
+    scrollbar-face-color: #333;
+}
+
+.bg-col {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 700px;
+    position: relative;
+    background: url(../img/line.png) no-repeat center top;
+    background-size: 100% 407px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-col div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f7f7f7;
+    width: 100%;
+    height: 100%;
+    transition: transform 3s;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    z-index: 3;
+}
+
+.logo {
+    width: 100%;
+    height: 60px;
+    background: url(../img/logopage_03.png);
+    background-size: 100% 100%;
+}
+
+.logo>img {
+    width: 100%;
+    height: 100%;
+}
+
+.logInBox {
+    display: none;
+    width: 380px;
+    height: 540px;
+    overflow: hidden;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -190px;
+    z-index: 5;
+}
+
+.logInBoxView {
+    width: 380px;
+    height: 540px;
+    overflow: hidden;
+}
+
+.logInBoxView>form {
+    float: left;
+    width: 360px;
+    height: 540px;
+    padding: 10px;
+}
+
+.logInBoxView>form>dl {
+    width: 360px;
+}
+
+.logInBoxView>form>dl>dt {
+    margin: 0 0 30px 0;
+    height: 20px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: #737373;
+}
+
+.logInBoxView>form>dl>dd {
+    height: 45px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 14px;
+    vertical-align: bottom;
+}
+
+.logInBoxView>form>dl>dd>input {
+    width: 360px;
+    padding-left: 20px;
+    height: 45px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid #cbcbd5;
+    color: #CBCBD5;
+    outline: none;
+    font-size: 15px;
+}
+
+.logInBoxView>form>dl>dd>input:focus {
+    border: 1px solid #9c9ca3;
+}
+
+.logInBoxView>form>dl>dd:nth-of-type(7)>input {
+    cursor: pointer;
+}
+
+#retrievePassword {
+    float: left;
+    cursor: pointer;
+}
+
+#forHelp {
+    float: right;
+    cursor: pointer;
+}
+
+#backLogIn {
+    float: left;
+    cursor: pointer;
+    color: #737373;
+}
+
+.newPassword {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    text-align: center;
+    background: rgba(247, 247, 247, 0.9);
+    display: none;
+}
+
+.newPassword_t {
+    width: 320px;
+    height: 130px;
+    position: absolute;
+    top: 50%;
+    margin-top: -65px;
+    left: 50%;
+    color: #737373;
+    margin-left: -160px;
+    background-color: #fafafa;
+    -webkit-box-shadow: 0 10px 30px #b0b0b0;
+    -moz-box-shadow: 0 10px 30px #b0b0b0;
+    -ms-box-shadow: 0 10px 30px #b0b0b0;
+    box-shadow: 0 10px 30px #b0b0b0;
+}
+
+.newPassword_t span {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px;
+    height: 24px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.newPassword_t e {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 15px;
+    left: 42px;
+    background: url(../img/danger.png) no-repeat;
+}
+
+.newPassword_t p {
+    font-size: 12px;
+    margin: 24px 0 0 100px;
+    line-height: 24px;
+}

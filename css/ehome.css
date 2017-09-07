@@ -1,0 +1,63 @@
+.addChartView {
+    width: 84px;
+    height: 84px;
+    background-image: url(../img/kj_sprite.png);
+    background-position: -817px -125px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -42px 0 0 -42px;
+    cursor: pointer;
+}
+
+.titleProIdSpan {
+    font-size: 16px;
+    color: #5b9bd1;
+    font-weight: bold;
+}
+
+.porttitle {
+    cursor: move;
+}
+
+.port1 {
+    height: 392px;
+}
+
+.leftport h1 {
+    padding-top: 20px;
+    font-weight: bold;
+    color: #5b9bd1;
+    text-align: center;
+    font-size: 40px;
+}
+
+.leftport p {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: #678098;
+}
+
+.rightport p {
+    padding-left: 3%;
+    font-size: 14px;
+    color: #678098;
+}
+
+.rightport b {
+    font-size: 14px;
+    color: #678098;
+}
+
+.rightport p:first-of-type {
+    margin-top: 20px;
+}
+
+.fa-close {
+    width: 30px;
+    margin-left: 5px;
+    color: #c2cddc;
+    font-size: 15px;
+    cursor: pointer;
+}

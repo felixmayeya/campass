@@ -1,0 +1,79 @@
+{"combo":[
+  "10GB/月","2016-10-10","2017-10-09","30天","2GB","8GB"
+],
+"bill":[
+  "1000元","1000元","0元","200000元","1000元"
+],
+"check":[
+  {
+    "payment":"2016-05",
+    "freshTime":"2016-11-01"
+  },
+  {
+    "payment":"2016-06",
+    "freshTime":"2016-11-01"
+  },
+  {
+    "payment":"2016-07",
+    "freshTime":"2016-11-01"
+  },
+  {
+    "payment":"2016-08",
+    "freshTime":"2016-11-01"
+  },
+  {
+    "payment":"2016-09",
+    "freshTime":"2016-11-01"
+  },
+  {
+    "payment":"2016-10",
+    "freshTime":"2016-11-01"
+  },
+  {
+    "payment":"2016-11",
+    "freshTime":"2016-11-01"
+  }
+],
+"comp":["kaishu@open01.com","北京开数科技有限公司","10GB/月(20000元/月)"],
+"electric_check":{
+  "table":[
+      {
+        "date":"20160906",
+        "newDataCont":"2GB",
+        "accumulative":"2GB",
+        "newOverCont":"0GB",
+        "source":"文件名1",
+        "duration":"30天",
+        "figure":"套餐支付"
+      },
+      {
+        "date":"20160910",
+        "newDataCont":"8GB",
+        "accumulative":"10GB",
+        "newOverCont":"0GB",
+        "source":"流式上传",
+        "duration":"30天",
+        "figure":"套餐支付"
+      },
+      {
+        "date":"20160910",
+        "newDataCont":"2GB",
+        "accumulative":"12GB",
+        "newOverCont":"2GB",
+        "source":"流式上传",
+        "duration":"30天",
+        "figure":"720元"
+      },
+      {
+        "date":"20160910",
+        "newDataCont":"1GB",
+        "accumulative":"13GB",
+        "newOverCont":"1GB",
+        "source":"流式上传",
+        "duration":"30天",
+        "figure":"360元"
+      }
+    ],
+    "bottom":["4080元","3000元","1080元"]
+}
+}

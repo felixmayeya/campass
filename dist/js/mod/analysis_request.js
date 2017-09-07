@@ -1,0 +1,1 @@
+define(["text!/tpl/analysis_request.html","chart","smChart","css!/css/analysis.css","analysis","reqCharts"],function(s,a,n){function e(){swiper=void 0,cvrPageMark=0,$(".page-content").html(s),analysis(a,n),changeLanguage("analysis"),reqBtn(a,n)}return{render:e}});

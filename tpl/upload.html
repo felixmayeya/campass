@@ -1,0 +1,391 @@
+<link href="assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/upload.css">
+<link href="assets/global/plugins/dropzone/dropzone.min.css">
+<div class="page-head">
+    <div class="page-title">
+        <h1 data-i18n="upload_title">上传数据</h1>
+    </div>
+</div>
+<div class="page-head" style="text-align:center;">
+    <div class="col-xs-3 row" style="text-align: center;">
+        <a class="brUpload btn blue btn-outline" style="float:left;padding:none;margin-left: 15px;" href="#tab_1_1_1" data-toggle="tab" aria-expanded="true"> <span class="caption-subject" data-i18n="upload_Attachment">浏览器上传</span></a>
+        <a class="scriptUpload btn blue btn-outline" style="float:left;padding:none;margin-left: 15px;" href="#tab_1_1_2" data-toggle="tab" aria-expanded="false"> <span class="caption-subject" data-i18n="upload_StreamingData">流式上传</span></a>
+    </div>
+    <div class="col-xs-8 row" style="color:#678098;">
+        <div class="col-xs-4"><span data-i18n="upload_Alreadyuse">已上传数据 </span><span id="used_data_size"></span>/<span id="totol_data_size"></span></div>
+        <div class="progress progress-striped col-xs-5" style="padding:0;margin:0;" id="p_total">
+            <div class="progress-bar progress-bar-info" role="progressbar" id="p_used">
+                <span class="sr-only"> <span id="used_per"></span> Used </span>
+            </div>
+        </div>
+        <div class="col-xs-3"><span data-i18n="upload_Residue">剩余</span><span id="left_data_size"></span></div>
+    </div>
+</div>
+<div class="row" style="margin-top:10px;color:#678098;">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-datatable bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject uploadCaptionTitle" style="color:#678098;" id="uploadTitle" data-i18n="upload_Attachment">浏览器上传</span>
+                </div>
+                <div class="actions">
+                    <a href="#/manage" class="btn btn-default" data-i18n="upload_Resource">返回资源管理</a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="tabbable-custom nav-justified">
+                    <div class="tab-content clearfix">
+                        <div class="tab-pane active" id="tab_1_1_1">
+                            <div class="mt-element-step">
+                                <div class="row step-thin">
+                                    <div class="col-md-12 bg-grey mt-step-col upLoadAStep active">
+                                        <div class="mt-step-number bg-white font-grey">1</div>
+                                        <div class="mt-step-title stepTitle font-grey-cascade" data-i18n="upload_selectFile">选择上传文件</div>
+                                    </div>
+                                    <form method="post" id="upLoadForm">
+                                        <div class="col-md-12 upLoadABox">
+                                            <span class="upLoadA col-md-6 col-xs-12">
+													<input type="file" name="upLoadFile" id="upLoadFile" value="" >
+
+												<span data-i18n="upload_clickUpload">点击上传数据文件</span>
+                                            </span>
+                                            <div class="portlet light selectPro col-md-6 col-xs-12">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <span class="caption-subject bold uppercase" style="color:#678098;" data-i18n="upload_fileChooseProject">
+															为数据归属项目
+														</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <select class="pro_choose" id="selectUpLoadPro" data-style="btn border-blue font-blue btn-default dropdown-toggle">
+                                                        <option value="暂不归属项目" data-fileid="" data-id="" data-i18n="upload_skipStep">暂不归属项目</option>
+                                                    </select>
+                                                    <div class="btn blue btn-outline pull-right" data-toggle="modal" data-target="#newModal" style="font-size:12px;line-height:20px;" data-i18n="upload_setUpProject">快速新建项目</div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-12 noPad">
+                                                <div class="clearfix" style="padding-top:10px;padding-right:20px">
+                                                    <div class="col-md-10 noPad">
+                                                        <span data-i18n="upload_explain1">1. 您可上传日志文本文件（如：txt、log、json、csv、excel等）;</span>
+                                                        <br>
+                                                        <span data-i18n="upload_explain2">2. 为减少上传等待时间，您可上传以下压缩格式文件：.zip、.tar.xz、.xz、.rar、.tar、.tar.gz、.gz、.bz2、.tar.bz2、.z、.tar.z ;</span>
+                                                        <br />
+                                                        <span data-i18n="upload_explain3">3. 数据容量计算方式为上传文件解压后的大小 ;</span>
+                                                        <br />
+                                                        <span data-i18n="upload_explain6">4.建议您单次上传数据文件不宜过大，在10GB级别以内为宜。</span>
+                                                    </div>
+                                                    <button id="submitBtn" type="button" data-loading-text="Loading..." class="btn blue mt-ladda-btn ladda-button pull-right" data-style="slide-right" data-i18n="upload_uploadBtn">上传</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-12 pull-right">
+                                                <div id="message"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="col-md-12 resolvingBox">
+                                        <table class="formatTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                        <input type="hidden" id="init_file_id" name="init_file_id">
+                                        <input type="hidden" id="init_project_id" name="init_project_id">
+                                        <button id="saveFormat" class="btn btn-default mt-sweetalert" data-i18n="upload_save">保存</button>
+                                        <button id="saveAndAnalysis" class="btn btn-default mt-sweetalert" data-i18n="upload_saveandanalysis">保存并分析</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab_1_1_2">
+                            <div class="mt-element-step">
+                                <div class="row step-thin">
+                                    <div class="col-md-6 bg-grey mt-step-col flowUploadStep active">
+                                        <div class="mt-step-number bg-white font-grey">1</div>
+                                        <div class="mt-step-title stepTitle font-grey-cascade" data-i18n="upload_Information">生成配置脚本</div>
+                                    </div>
+                                    <div class="col-md-6 bg-grey mt-step-col flowUploadStep">
+                                        <div class="mt-step-number bg-white font-grey">2</div>
+                                        <div class="mt-step-title stepTitle font-grey-cascade" data-i18n="upload_ExecuteScript">执行配置脚本</div>
+                                    </div>
+                                </div>
+
+                                <div class="scriptUploadBox1 scriptUploadBox row">
+                                	<div class="col-md-8 col-md-offset-2">
+                                		<div class="panel-group accordion" id="accordion1">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+	                                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" data-i18n="upload_text23">一、请验证服务器的jdk版本</a>
+	                                                </h4>
+                                                </div>
+                                                <div id="collapse_1" class="panel-collapse collapse">
+                                                    <div class="panel-body" style="height:200px; overflow-y:auto; overflow-x: hidden;">
+                                                        <span data-i18n="upload_text24">在服务器终端执行以下命令：</span><br>
+                                                        <p class="highLight P_2em">java -version</p> <br>
+                                                        <span data-i18n="upload_text25">如果终端显示以下内容：</span> <br>
+                                                        <p class="highLight P_2em">java version "1.8.0_111" <br>
+                                                        Java(TM) SE Runtime Environment (build 1.8.0_111-b14) <br>
+                                                        Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode) </p>
+                                                        <span data-i18n="upload_text26">说明jdk版本为：1.8.0_111，满足Agent的部署环境要求(请确保jdk版本为1.7及以上)。</span> <br>
+                                                        <span data-i18n="upload_text27">如果终端显示以下内容：</span> <p class="highLight P_2em">bash: java: command not found </p><span data-i18n="upload_text28">则说明服务器未安装JDK。</span><br> 
+                                                        <br>
+                                                        <span data-i18n="upload_text29">注：</span> <br>
+                                                        <span data-i18n="upload_text30">JDK安装方法：</span> <br>
+                                                        <span data-i18n="upload_text31">1、创建java安装路径（这里安装路径以”/usr/java”为例，JDK以版本1.7为例） </span><br>
+                                                        <p class="highLight P_2em">[root@localhost ~]# mkdir /usr/java <br>
+                                                        [root@localhost ~]# cd /usr/java <br></p>
+                                                        <span data-i18n="upload_text32">2、下载JDK,然后解压</span> <br>
+                                                        <span data-i18n="upload_text33" class="P_2em">JDK下载页：</span> <br>
+                                                        <p class="highLight P_2em"><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" class="highLight">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html </a><br>
+                                                        [root@localhost java]# tar -zxvf jdk-7u79-linux-x64.tar.gz </p>
+                                                        <span data-i18n="upload_text34">3.设置环境变量</span> <br>
+                                                        <p class="highLight P_2em">[root@localhost java]# vi /etc/profile </p>
+                                                        <span data-i18n="upload_text35">在profile中添加如下内容:</span> <br>
+                                                        <p class="highLight P_2em">#set java environment <br>
+                                                        JAVA_HOME=/usr/java/jdk1.7.0_79 <br>
+                                                        JRE_HOME=/usr/java/jdk1.7.0_79/jre <br>
+                                                        CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib <br>
+                                                        PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin <br>
+                                                        export JAVA_HOME JRE_HOME CLASS_PATH PATH <br></p>
+                                                        <span data-i18n="upload_text36">让修改生效: </span><br>
+                                                        <p class="highLight P_2em">[root@localhost java]# source /etc/profile </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2" data-i18n="upload_text37"> 二、请检查curl版本 </a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse_2" class="panel-collapse collapse">
+                                                    <div class="panel-body" style="height:200px; overflow-y:auto;overflow-x: hidden;">
+                                                        <span data-i18n="upload_text38">在终端窗口执行curl 命令：</span><br>
+														<p class="highLight P_2em">[root@localhost java]# curl </p>
+														<span data-i18n="upload_text39">如果终端显示以下内容，则系统未安装curl </span><br>
+														<p class="highLight P_2em">-bash: curl: command not found </p>
+														<span data-i18n="upload_text29">注：</span><br>
+														<span data-i18n="upload_text40">curl安装方法：</span> <br>
+														<span data-i18n="upload_text41">1.下载(这里curl以版本7.38.0为例)</span> <br>
+														<span data-i18n="upload_text42" class="P_2em">curl 下载页：</span><a href="https://curl.haxx.se/download.html" target="_blank" class="highLight">https://curl.haxx.se/download.html </a><br>
+														<span data-i18n="upload_text43">2.解压 </span><br>
+														<p class="highLight P_2em">tar -xzvf curl-7.38.0.tar.gz </p>
+														<span data-i18n="upload_text44">3.安装 </span><br>
+														<p class="highLight P_2em">cd curl-7.38.0 ./configure make make install </p>
+														<span data-i18n="upload_text45">4.完成 </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h5 data-i18n="upload_text46">三、生成配置脚本</h5>
+                                	</div>	
+                                    <div class="col-md-8 col-md-offset-2" style="text-align: center;">
+                                        <select class="scriptUploadBox1_select" id="onlineInitProject">
+                                            <option value="选择项目" data-i18n="upload_choosePro">选择项目</option>
+                                        </select><i>!</i>
+                                        <div>
+                                            <span data-i18n="upload_text1">选择文件归属的项目</span>
+                                        </div>
+                                        <br />
+                                        <input id="logPath" type="text" name="name" value="" maxLength="120" placeholder="请输入日志文件的绝对路径" data-place="upload_absolutepath" required="required"><i>!</i>
+                                        <div>
+                                            <span> 1、--filepath /PATH/TO/YOUR/LOGFILE </span>
+                                            <br />
+                                            <e data-i18n="upload_text2">需要上传的日志文件的绝对路径，必须包含日志文件名。</e>
+                                            <br />
+                                            <e data-i18n="upload_text3">示例</e>：<span> --filepath /var/log/httpd/access_log </span>
+                                        </div>
+                                        <br />
+                                        <select class="scriptUploadBox1_select" id="logTypeSelect">
+                                            <option value="选择日志类型" data-i18n="upload_TypeofLog">选择日志类型</option>
+                                            <option value="Apache">Apache</option>
+                                            <option value="Tomcat">Tomcat</option>
+                                            <option value="Ngins">Nginx</option>
+                                            <option value="IIS6">IIS6</option>
+                                            <option value="IIS7">IIS7</option>
+                                        </select><i>!</i>
+                                        <div>
+                                            <span>2、<e data-i18n="upload_text4">选择需要上传的日志的类型。您的选择将直接影响到后台对日志字段的提取。</e><br /></span>
+                                        </div>
+                                        <br />
+                                        <button class="buildBtn btn blue ladda-button"  data-loading-text="Loading..." data-i18n="upload_applyScript" data-style="expand-left"><span class="ladda-label">确定生成</span></button>
+                                        <div class="scriptUploadBox_tips">
+                                            <span data-i18n="upload_explain4">注：每个配置文件只能监听一个日志文件，若要监听多个日志文件，请为每个日志文件分别生成配置文件。</span>
+                                            <br /><span data-i18n="upload_explain5">如需帮助请拨打开数科技技术支持热线:010-8272 4800，E-mail:support@open01.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="btn blue btn-outline" style="float:left;margin-top:7px;" data-toggle="modal" data-target="#newModal" data-i18n="upload_setUpProject">快速新建项目</div>
+                                    </div>
+                                </div>
+                                <div class="scriptUploadBox2 scriptUploadBox">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="prevPage btn blue btn-outline" data-i18n="upload_prev">上一步</span>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8 scriptUploadBox2_content">
+                                            <e data-i18n="upload_text7">您专属的配置脚本已生成，请复制后，按下述步骤执行该脚本</e><br>
+                                            <br>
+                                            <textarea rows="8" id="config_file_out_path" name="config_file_out_path" style="width: 100%"></textarea>
+                                            <br>
+                                            <br>
+                                            <button class="copyScript btn blue pull-right" data-i18n="upload_downloadScript">复制配置脚本</button>
+                                        </div>
+                                        <div class="col-md-2">
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="row">
+                                         <div class="col-md-2">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p>
+                                                <e data-i18n="upload_text8">拷贝执行代码到服务器执行： </e>：
+                                                <br /> &nbsp;&nbsp;&nbsp;&nbsp;
+                                            </p>
+                                            <p class="P_2em highLight">
+                                                [root@localhost]# curl -d "pattern=%{IP:IP} %{USER:ident} %{USER:auth} \\[%{HTTPDATE:Time}\\] \"%{WORD:Method} %{URIPATHPARAM:URL} %{DATA:Protocol}\" %{INT:Status} %{INT:Bytes} \"%{DATA:Referrer}\" \"%{DATA:Agent}\"&fields=\"\"&user=26&application=campass&database=open_26_1002568&table=2568&path=/usr/nginx /logs/access.txt" http://60.205.152.36:3000/ | sh 
+                                            </p>
+                                            <e data-i18n="upload_text10">执行命令后，终端输出如下内容：</e>
+                                            <p class="P_2em highLight">
+                                                % Total % Received % Xferd Average Speed Time Time Time Current 
+                                                <br />Dload Upload Total Spent Left Speed 
+                                                <br />100 503 0 217 100 286 24 31 0:00:09 0:00:09 --:--:-- 0 % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 75.9M 100 75.9M 0 0 262M 0 --:--:-- --:--:-- --:--:-- 263M 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/ 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/bin/ 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/bin/flume-ng.cmd 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/bin/flume-ng.ps1 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/bin/flume-ng 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/lib/ 
+                                                <br />./0c06cd37a6f69afd13277c8bdf8566e5/lib/httpclient-4.2.1.jar 
+                                                <br />...... 
+                                                <br />Checking jdk version... 
+                                                <br />1.8.0_121 
+                                                <br />Jdk version matched 
+                                                <br />Data agent log directory checking... 
+                                                <br />Data agent log directory created 
+                                                <br />Starting data agent... 
+                                                <br />Data agent started,Pid = 31562 
+                                            </p>
+                                            <e data-i18n="upload_text12">执行代码后，如果终端最后一行显示如下内容：</e>：
+                                            <br />
+                                            <p class="P_2em highLight">
+                                                Data agent started,Pid = 31562
+                                            </p>
+                                            <e data-i18n="upload_text22" style="color:#ccc">本例中31562位启动进程ID，此ID会因不同进程而异</e><br>
+                                            <e data-i18n="upload_text13">说明Agent启动成功！ </e>
+                                            <e data-i18n="upload_text14">执行代码后，如果终端最后一行显示如下内容： </e>
+                                            <p class="P_2em highLight">error: start data agent failed !</p>
+                                            <e data-i18n="upload_text20">则说明Agent启动失败！ </e>
+                                            <e data-i18n="upload_text21">请拨打开数科技技术支持热线:010-8272 4800 </e>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                       
+                                </div>
+                                <!-- <div class="scriptUploadBox3 scriptUploadBox row">
+                                    <div class="col-md-12">
+                                        <span class="prevPage btn blue btn-outline" data-i18n="upload_prev">上一步</span>
+                                        <span class="nextPage btn blue btn-outline" data-i18n="upload_next">下一步</span>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8 scriptUploadBox3_content">
+                                        <p>
+                                            1)
+                                            <e data-i18n="upload_text8">为脚本赋权（此步骤需要root或sudo权限）</e>：
+                                            <br /> &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <e data-i18n="upload_text9">请先将您下载的配置脚本转移至服务器，并在服务器中执行以下命令为脚本赋权。</e>
+                                            <br />
+                                        </p>
+                                        <p class="P_2em highLight">username@hostname:~$chmod 755 conﬁgure_linux_rsyslog.sh</p>
+                                        <e data-i18n="upload_text10">意外：如果赋权后出现下述内容，说明当前账户不具有root或sudo权限，请联系服务器管理员。</e>
+                                        <p class="P_2em highLight-b" data-i18n="upload_text11">chmod:更改"jar"的权限:不允许的操作</p>
+                                        2)
+                                        <e data-i18n="upload_text12">在服务器中执行您的脚本</e>：
+                                        <br />
+                                        <p class="P_2em highLight">username@hostname:~$sudo ./conﬁgure_linux_rsyslog.sh</p>
+                                        <e data-i18n="upload_text13">显示以下内容说明您的防火墙未关闭，拒绝了该请求操作</e>
+                                        <p class="P_2em highLight-b">ERROR SYSLOG_SERVER_HOST log.ali.open01.com is not reachable. Please check your network and firewall settings. Continuing to configure OPEN01 on your system.</p>
+                                        <p>
+                                            <e data-i18n="upload_text14">如果您是Ubuntu可以执行右侧命令</e>：<span style="padding: 0 15px;" class="highLight">sudo ufw disable</span>
+                                            <br />
+                                            <e data-i18n="upload_text15">如果您是CentOS、Redhat可执行右侧命令</e>：<span style="padding: 0 15px;" class="highLight"> service iptables stop</span>
+                                            <br/>
+                                            <e data-i18n="upload_text16">如显示以下内容说明脚本正在执行中</e>
+                                        </p>
+                                        <p class="P_2em highLight-b">
+                                            [2016-09-08 17:56:13] INFO SYSLOG_SERVER_HOST:log.ali.open01.com, AUTH_TOKEN:e7972e9f1df04993a40a26b4a232c9bc, FILEPATH:/PATH/TO/YOUR/LOGFILE, APPNAME:TYPE_OF_YOUR_LOG, TAG:CUSTOM_ATTRIBUTES_OF_YOUR_LOG [2016-09-08 17:56:13] INFO Initiating Configure rsyslog for Linux.
+                                            <br /> [2016-09-08 17:56:13] INFO checkIfUserHasRootPrivileges is OK
+                                            <br /> [2016-09-08 17:56:13] INFO Operating system is Ubuntu.
+                                            <br /> [2016-09-08 17:56:13] INFO CheckIfSupportedOS is OK
+                                            <br /> [2016-09-08 17:56:13] INFO Checking if SYSLOG_SERVER_HOST log.ali.open01.com is reachable.
+                                            <br /> [2016-09-08 17:56:14] INFO SYSLOG_SERVER_HOST log.ali.open01.com is reachable.
+                                            <br /> [2016-09-08 17:56:14] INFO Checking if SYSLOG_SERVER_HOST log.ali.open01.com is reachable via 5140 port
+                                            <br /> [2016-09-08 17:56:24] INFO SYSLOG_SERVER_HOST log.ali.open01.com is reachable via 5140 port.
+                                            <br /> [2016-09-08 17:56:24] INFO rsyslog is present as service.
+                                            <br /> [2016-09-08 17:56:24] INFO selinux status is not enforced.
+                                            <br /> [2016-09-08 17:56:24] INFO "/var/spool/rsyslog" already exist.
+                                            <br /> [2016-09-08 17:56:24] INFO Changing the permission on the rsyslog in "/var/spool"
+                                            <br /> [2016-09-08 17:56:24] INFO Creating rsyslog config file "20160908175613_open01.conf" [2016-09-08 17:56:24] INFO Created rsyslog config file "20160908175613_open01.conf" [2016-09-08 17:56:24] INFO Moving the config file "20160908175613_open01.conf" to "/etc/rsyslog.d" [2016-09-08 17:56:24] INFO All done, please run "service rsyslog restart" to restart rsyslog service
+                                        </p>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+                                <div class="scriptUploadBox4 scriptUploadBox row">
+                                    <div class="col-md-12">
+                                        <span class="prevPage btn blue btn-outline" data-i18n="upload_prev">上一步</span>
+                                    </div>
+                                    <span style="opacity:0;position: relative;left: 10%;" data-i18n="upload_next">下一步</span>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6 scriptUploadBox4_content">
+                                        <p class="P_2em" data-i18n="upload_text17">4.重启Rsyslog服务,完成配置</p>
+                                        <p class="P_2em highLight">
+                                            $ sudo service rsyslog restart
+                                        </p>
+                                        <p class="P_2em" data-i18n="upload_text18">配置完成。您可以在“数据列表中查看日志数据的监听采集情况”</p>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-12 right">
+                                        <button id="completeScript" type="button" class="btn btn-primary" data-i18n="upload_text19">完成</button>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="color:#678098!important">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="newModalLabel" data-i18n="upload_newProject">新建项目</h4>
+            </div>
+            <div class="modal-body form-group" style="padding: 15px 15px 0px 15px;margin-bottom:0px;">
+                <input type="text" class="form-control" placeholder="项目名称" id="new_name" maxlength='20' data-place="upload_proTitle" />
+                <label class="control-label"></label>
+            </div>
+            <div class="modal-body form-group" style="padding: 15px 15px 0px 15px;">
+                <input type="text" class="form-control" placeholder="项目描述" id="new_des" maxlength='30' data-place="upload_proDescription" />
+                <label class="control-label"></label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="upload_cancel">取消</button>
+                <button type="button" class="btn btn-primary" id="go_sumb2" data-i18n="upload_Apply">提交</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>

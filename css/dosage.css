@@ -1,0 +1,100 @@
+.useShow{
+	color: #737373;
+	height: 26px;
+}
+.useShow p{
+	text-indent: 1em;
+}
+#dosageTxt{
+	display: inline-block;
+	vertical-align: middle;
+}
+#dosageBar{
+	display: inline-block;
+	vertical-align: middle;
+	height: 11px;
+	width: 272px;
+	background-color: #eee;
+	box-shadow: 0 0 1px 0px rgba(0,0,0,0.4) inset;
+	border-radius: 3px;
+	padding: 1px;
+	border: 1px solid #ddd;
+	margin: 1px 0 0 5px;
+}
+.dosageBarBox{
+	line-height: 20px;
+}
+#dosageBar_blue{
+	height: 100%;
+	width: 40%;
+	background-color: #8b91a5;
+	border-radius: 3px;
+}
+#upLoadBtn{
+	display: inline-block;
+	vertical-align: middle;
+	height: 25px;
+	padding: 0 10px;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 25px;
+	position: relative;
+	float: left;
+}
+.chekBtnBox{
+	text-align: right;
+	display: inline-block;
+	float: right;
+}
+.chekBtnBox p{
+	height: 24px;
+	line-height: 24px;
+	border-radius: 3px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	color: #737373;
+	cursor: pointer;
+	padding: 0 10px;
+}
+tr:nth-child(2n){
+	background:#fff;
+}
+tr:nth-child(2n+1){
+	background:#f5f5f5;
+	}
+table .tr_head{
+	background:#fff;
+	border-bottom: 1px solid #ddd;
+	height: 27px;
+}
+tr{
+	text-align: center;
+	border-left: 4px solid rgba(0,0,0,0);
+	box-sizing: border-box;
+}
+.table_outer{overflow: hidden; color: #737373;font-size: 16px;margin: 0 auto;}
+.tableSm tr th{max-width: 300px;}
+td p{line-height: 35px;}
+.tr_mid{
+	height: 40px;
+}
+tr td:nth-child(1){
+	border-right: 1px solid #ddd;
+}
+.dosageLine1{
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	padding: 8px 0;
+}
+.table_outer{
+	width: 100%;
+	text-align: center;
+	border: #737373;
+}
+.checkBoxInput{
+	vertical-align: bottom;
+}
+.listNum{
+	position: relative;
+}

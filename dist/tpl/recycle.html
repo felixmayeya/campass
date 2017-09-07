@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="css/manage.css" />
+<link href="assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<style>
+	.table>tbody>tr>td,.table>thead>tr>th {
+	    vertical-align: middle!important;
+	    white-space:nowrap!important;
+	}
+	tr>td:nth-of-type(5) {
+		text-align: center;
+	}
+
+	tr>td:nth-of-type(6),
+	tr>th:nth-of-type(6) {
+		border-left: 2px solid #e7ecf1;
+	}
+
+	.page-head {
+		padding-top: 10px;
+	}
+
+	.portlet-body {
+		padding: 10px;
+	}
+	
+	.page-content {
+		padding-top: 0!important;
+	}
+</style>
+<div class="page-head">
+	<div class="page-title">
+		<h1 data-i18n="recycle_bin">项目回收站</h1>
+	</div>
+</div>
+<div class="contentDiv row" style="color:#678098!important">
+	<div class="col-xs-12">
+		<div class="portlet light portlet-fit portlet-datatable bordered">
+			<div class="portlet-body">
+				<div>
+					<div>
+						<table class="table table-responsive" id="rec" style="color:#678098!important">
+							<thead>
+								<tr>
+									<th colspan="5" data-i18n="recycle_pro">项目</th>
+									<th colspan="5" style="text-align:center" data-i18n="recycle_data">数据</th>
+								</tr>
+								<tr role="row">
+									<th class="table-checkbox sorting_disabled">
+										<div class="fen">
+											<input type="checkbox" class="allsel">
+										</div>
+									</th>
+									<th data-i18n="recycle_deletetime"> 删除日期 </th>
+									<th data-i18n="recycle_name"> 名称 </th>
+									<th data-i18n="recycle_des"> 描述 </th>
+									<th data-i18n="recycle_creatime"> 创建日期 </th>
+									<th data-i18n="recycle_title"> 名称 </th>
+									<th data-i18n="recycle_type"> 类型 </th>
+									<th data-i18n="recycle_uptime"> 上传日期 </th>
+									<th data-i18n="recycle_losetime"> 失效日期 </th>
+									<th data-i18n="recycle_size"> 大小 </th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12" style="text-align:right;">
+							<button type="button" class="btn red" id="delChose" data-i18n="recycle_delete">彻底删除</button>
+							<button type="button" class="btn blue" id="restoreChose" data-i18n="recycle_restore">还原选中</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

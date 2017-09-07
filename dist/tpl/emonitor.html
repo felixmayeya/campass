@@ -1,0 +1,55 @@
+<div class="page-head">
+	<div class="page-title">
+		<h1 data-i18n="emonitor_title">监控任务详情</h1>
+	</div>
+</div>
+<div class="page-head breadcrumb">
+	<select id="selectD" class="homePro_choose" data-style="btn border-blue font-blue btn-default dropdown-toggle"></select>
+	<div class="page-toolbar">
+		<a href="#/dashboard2" class="btn green-haze btn-outline uppercase" id="back" data-i18n="emonitor_back">返回监控仪表盘</a>
+		<button type="button" class="btn red btn-outline uppercase" id="delmiss" data-i18n="emonitor_del">删除任务</button>
+	</div>
+</div>
+<div>
+	<div class="portlet light bordered">
+		<div class="portlet-title">
+			<div class="caption">
+				<span class="titleProId" data-i18n="emonitor_project">监控项目</span>：<span class="titleProIdSpan sname"></span><br/>
+				<span class="titlePro" data-i18n="emonitor_cont">监控内容</span>：<span class="titlePro skey"></span><br/>
+				<span class="titlePro" data-i18n="emonitor_frequency">监控频率</span>：<span class="titlePro sfreq"></span><br/>
+				<span class="titlePro" data-i18n="emonitor_range">监控范围</span>：<span class="titlePro srange"></span><br/>
+				<span class="titlePro" data-i18n="emonitor_create">创建日期</span>：<span class="titlePro screat"></span>
+			</div>
+			<!--div class="actions">
+				<a href="javascript:;" class="btn blue btn-outline uppercase" id="download" data-i18n="emonitor_download">导出图片</a>
+			</div-->
+		</div>
+		<div class="portlet-body row chartbox">
+			<div id="linecharts"></div>
+		</div>
+	</div>
+</div>
+<div style="color:#678098!important">
+	<div class="portlet light bordered">
+		<div class="portlet-title" style="margin-bottom:0;">
+			<div class="caption">&nbsp;
+				<span class="ctitle" data-i18n="emonitor_history">历史数据详情</span>
+			</div>
+			<div class="actions">
+				<button type="button" class="btn blue btn-outline uppercase" id="downloadcsv" download="" target="_blank">CSV</button>
+			</div>
+		</div>
+		<div class="portlet-body row chartablebox">
+			<table id="chartable" class="table table-responsive table-striped dataTable no-footer table-hover">
+				<thead>
+					<tr>
+						<th data-i18n="emonitor_utime">起始时间</th>
+						<th data-i18n="emonitor_dtime">终止时间</th>
+						<th data-i18n="emonitor_sum">统计值（次）</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+	</div>
+</div>

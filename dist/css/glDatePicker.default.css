@@ -1,0 +1,173 @@
+.gldp-default {
+	font-family: 'helvetica';
+}
+
+/* Core style for every cell */
+.gldp-default .core {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: relative;
+	float: left;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	text-align: center;
+	color: #737373;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dadada',GradientType=0 );
+}
+
+/* Cell border */
+
+/* Month/Year text and select */
+.gldp-default .monyear,
+.gldp-default .monyear select {
+	font-size: 16px !important;
+	font-weight: bold;
+}
+
+/* Month/Year text */
+.gldp-default .monyear span {
+	margin: 0 5px 0 5px;
+}
+
+/* Prev/Next arrows */
+.gldp-default .prev-arrow,
+.gldp-default .next-arrow {
+	color: #ccc;
+}
+
+.gldp-default .prev-arrow:hover,
+.gldp-default .next-arrow:hover {
+}
+
+.gldp-default .prev-arrow-off,
+.gldp-default .next-arrow-off {
+	color: #222;
+	opacity: 0.15;
+}
+
+/* Days of the week */
+.gldp-default .dow {
+	color: #737373;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#880000',GradientType=0 );
+}
+
+/* Weekdays */
+.gldp-default .mon,
+.gldp-default .tue,
+.gldp-default .wed,
+.gldp-default .thu,
+.gldp-default .sat,
+.gldp-default .sun,
+.gldp-default .fri {
+	text-align: center;
+	cursor: pointer;
+}
+/* Selectable days that are outside of current month being shown */
+.gldp-default .outday {
+	color: rgba(115,115,115,0.3);
+}
+
+/* Hover */
+.gldp-default .mon:hover,
+.gldp-default .tue:hover,
+.gldp-default .wed:hover,
+.gldp-default .thu:hover,
+.gldp-default .fri:hover,
+.gldp-default .sat:hover,
+.gldp-default .sun:hover {
+	background: rgba(38,85,119,0.4);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 );
+}
+
+/* Non-Selectable days */
+.gldp-default .noday {
+	color: #444;
+	font-weight: normal;
+	cursor: wait !important;
+	background: #aaaaaa;
+	background: -moz-linear-gradient(top,  #aaaaaa 0%, #8a8a8a 98%, #aaaaaa 99%, #8a8a8a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaaaaa), color-stop(98%,#8a8a8a), color-stop(99%,#aaaaaa), color-stop(100%,#8a8a8a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #aaaaaa 0%,#8a8a8a 98%,#aaaaaa 99%,#8a8a8a 100%);
+	background: -o-linear-gradient(top,  #aaaaaa 0%,#8a8a8a 98%,#aaaaaa 99%,#8a8a8a 100%);
+	background: -ms-linear-gradient(top,  #aaaaaa 0%,#8a8a8a 98%,#aaaaaa 99%,#8a8a8a 100%);
+	background: linear-gradient(to bottom,  #aaaaaa 0%,#8a8a8a 98%,#aaaaaa 99%,#8a8a8a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaaa', endColorstr='#8a8a8a',GradientType=0 );
+}
+
+/* Currently selected day */
+.gldp-default .selected {
+	color: #fff;
+	background: #265577;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8bf88', endColorstr='#ef753f',GradientType=0 );
+}
+
+/* Today */
+.gldp-default .today {
+	color: #737373;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8bf88', endColorstr='#ef753f',GradientType=0 );
+}
+.gldp-default .today::after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background:#265577;
+	bottom: 1px;
+	left: 0px;
+}
+/* Special */
+.gldp-default .special {
+	color: #fff;
+	border-color: #0c0;
+	background: #88e888;
+	background: -moz-linear-gradient(top,  #88e888 0%, #9dff9d 1%, #42fd42 2%, #01ab01 98%, #37ef37 99%, #37ef37 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88e888), color-stop(1%,#9dff9d), color-stop(2%,#42fd42), color-stop(98%,#01ab01), color-stop(99%,#37ef37), color-stop(100%,#37ef37));
+	background: -webkit-linear-gradient(top,  #88e888 0%,#9dff9d 1%,#42fd42 2%,#01ab01 98%,#37ef37 99%,#37ef37 100%);
+	background: -o-linear-gradient(top,  #88e888 0%,#9dff9d 1%,#42fd42 2%,#01ab01 98%,#37ef37 99%,#37ef37 100%);
+	background: -ms-linear-gradient(top,  #88e888 0%,#9dff9d 1%,#42fd42 2%,#01ab01 98%,#37ef37 99%,#37ef37 100%);
+	background: linear-gradient(to bottom,  #88e888 0%,#9dff9d 1%,#42fd42 2%,#01ab01 98%,#37ef37 99%,#37ef37 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88e888', endColorstr='#37ef37',GradientType=0 );
+}
+.yearTitle,.yearNextArrow,.yearPrevArrow{
+	background-color: #e5e5e5;
+}
+.prevArrow,.nextArrow,.monTitle{
+	background-color: #f1f1f1;
+}
+.prevArrow{
+	cursor: pointer;
+}
+.nextArrow{
+	cursor: pointer;
+}
+.yearNextArrow{
+	cursor: pointer;
+}
+.yearPrevArrow{
+	cursor: pointer;
+}
+.prevArrow a,.nextArrow a,.yearNextArrow a,.yearPrevArrow a{
+	display: inline-block;
+	transition: all 0.167s;
+}
+.prevArrow:hover a,.nextArrow:hover a,.yearNextArrow:hover a,.yearPrevArrow:hover a{
+	transform: scale(1.2);
+}
+div[gldp-el~='mydate'] div[class~='selected']{
+	cursor: pointer !important;
+}
+.prev-arrow{
+	width: 9px;
+	height: 10px;
+	background-position: -702px -695px;
+}
+.next-arrow{
+	width: 9px;
+	height: 10px;
+	background-position: -719px -695px;
+}
+.yearPrevArrow{
+	margin-left: -2px !important;
+}

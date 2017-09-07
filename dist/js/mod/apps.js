@@ -1,0 +1,1 @@
+define(["text!/tpl/apps.html"],function(e){function n(){$(".page-content").html(e),changeLanguage("apps"),"en"===localStorage.getItem("language")&&($(".portlet-body h4").css("font-size","16px"),$(".hideI18nLi").css("display","none"))}return{render:n}});

@@ -1,0 +1,40 @@
+<link href="assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/upload.css">
+<link href="assets/global/plugins/dropzone/dropzone.min.css">
+<style>
+  .resolvingBox{
+    display: block;
+  }
+</style>
+<div class="row" style="margin-top:10px;color:#678098;">
+  <div class="col-md-12">
+  <div class="portlet light portlet-fit portlet-datatable bordered">
+    <div class="portlet-title">
+      <div class="caption">
+        <span class="caption-subject uploadCaptionTitle" style="color:#678098;" id="uploadTitle">文件上传预解析</span>
+      </div>
+    </div>
+    <div class="portlet-body">
+    <div class="parseLoading col-md-12" style="color:#678098;text-align:center;font-size:26px;">LOADING...</div>
+      <div class="tabbable-custom nav-justified">
+        <div class="tab-content clearfix">
+                  <div class="col-md-12 resolvingBox">
+                    <table class="formatTable parseFormatTable">
+                      <thead>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                    <input type="hidden" id="init_file_id" name="init_file_id">
+                      <input type="hidden" id="init_project_id" name="init_project_id">
+                  </div>
+                    <button id="parseSave" class="btn btn-default mt-sweetalert pull-right" style="display: none;">确认解析格式</button>
+                    <button id="saveFormat" class="btn btn-default mt-sweetalert pull-right" style="display: none;" data-i18n="upload_save">保存</button>
+                    <button id="saveAndAnalysis" class="btn btn-default mt-sweetalert pull-right" style="display: none;" data-i18n="upload_saveandanalysis">保存并分析</button>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>

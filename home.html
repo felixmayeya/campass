@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>CAMPASS朗录 | 开数科技</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+        <link rel="shortcut icon" href="img/favicon.ico"/>
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" /> -->
+        <!-- <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/> -->
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <!-- <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css"/> -->
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <!-- <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css"/>
+        <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css"/> -->
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <!-- <link href="assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/layouts/layout4/css/default.min.css" rel="stylesheet" type="text/css" id="style_color"/>
+        <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css"/> -->
+        <!-- END THEME LAYOUT STYLES -->
+
+        <!-- <link rel="stylesheet" type="text/css" href="css/glDatePicker.default.css"/>
+        <link rel="stylesheet" href="css/reset.css" media="screen" title="no title">
+        <link rel="stylesheet" href="css/base.min.css"> -->
+
+        <!-- build:css css/home-base.min.css -->
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet">
+        <link href="assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet">
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css"/>
+
+        <link href="assets/global/css/components.min.css" rel="stylesheet">
+        <link href="assets/global/css/plugins.min.css" rel="stylesheet">
+        <link href="assets/layouts/layout4/css/layout.min.css" rel="stylesheet">
+        <link href="assets/layouts/layout4/css/default.min.css" rel="stylesheet">
+
+        <link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet">
+        <!-- endbuild -->
+        <link rel="stylesheet" href="css/reset.css" media="screen" title="no title">
+        <style>
+            .box {
+                width: 90%;
+                height: 330px;
+                margin: 10% auto;
+            }
+
+            .box > div {
+                padding: 15px;
+            }
+
+            .cli {
+                cursor: pointer;
+            }
+
+            .portlet {
+                position: relative;
+                text-align: center;
+                width: 250px;
+                height: 330px;
+                margin: 0 auto;
+                border: 1px solid #d4d4d4;
+                background: #fff;
+                box-shadow: 5px 2px 10px rgba(9,2,4,0.1);
+            }
+            .portlet:hover p {
+                display: block;
+            }
+            .portlet:hover h4 {
+                z-index: 11;
+                color: #fff;
+            }
+            .portlet>.portlet-title{
+                position: relative;
+                height: 250px;
+                margin-bottom:0;
+                background-position: top center;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            .portlet-title >div{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-top: 63px solid white;
+                border-left: 63px solid transparent;
+                z-index: 2;
+            }
+            .portlet-title > span {
+                position: absolute;
+                top: 15px;
+                right: -3px;
+                width: 50px;
+                font-size: 12px;
+                color: #cdcdcd;
+                text-align: center;
+                transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                z-index: 3;
+            }
+            .portlet-body p {
+                padding: 125px 15px 0 15px;
+                display: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(0,0,0,0.3);
+                color: #fff;
+                line-height: 20px;
+                font-size: 12px;
+                z-index: 10;
+            }
+            .portlet-body > h4 {
+                position: relative;
+                font-size: 20px;
+                padding:0;
+                margin:0;
+                line-height: 78px;
+                font-weight: bold;
+                color: #3B3F51;
+            }
+
+        </style>
+    </head>
+    <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+        <!-- BEGIN HEADER -->
+
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="home.html">
+                        <img src="img/campass.png" alt="logo" class="logo-default" style="width:160px;">
+                    </a>
+                </div>
+                    <!-- END LOGO -->
+                    <div class="page-top">
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="separator hide"></li>
+                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                        <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                        <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-success messageNum">
+                                                    0
+                                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                                        <span class="bold messageNum">0</span>
+                                                        <e data-i18n="porlet_notifications">条 未读信息</e>
+                                                    </h3>
+                                    <a href="/index.html#/notice" data-i18n="porlet_viewAll">查看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller indexMessage" id="initMesInfo" style="height: 250px;" data-handle-color="#637283"></ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END NOTIFICATION DROPDOWN -->
+                        <li class="separator hide"></li>
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-user dropdown-dark">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="username username-hide-on-mobile"></span>
+                                <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+                                <img class="img-circle avatar" style="height:39px;width:39px;" src="img/avatar.png" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/index.html#/options">
+                                        <i class="icon-user"></i>
+                                        <e data-i18n="porlet_User">
+                                            个人设置</e>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/index.html#/check">
+                                        <i class="icon-credit-card"></i>
+                                        <e data-i18n="porlet_Bill">
+                                            我的账单
+                                        </e>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="javascript:;" id="lock">
+                                        <i class="icon-lock"></i>
+                                        <e data-i18n="porlet_LockScreen">
+                                            暂时离开
+                                        </e>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" id="exit">
+                                        <i class="icon-key"></i>
+                                        <e data-i18n="porlet_LogOut">
+                                            注销账户
+                                        </e>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END PAGE TOP -->
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+            </div>
+
+                <!-- END HEADER INNER -->
+        </div>
+            <!-- END HEADER -->
+            <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="row box">
+                    <div class="clibox col-lg-3 col-md-6 col-sm-6 col-xs-12" style="display:none;">
+                        <div class="portlet cli">
+                            <div class="portlet-title" style="border:none;">
+                                <div></div>
+                                <span class="act">未激活</span>
+                            </div>
+                            <div class="portlet-body">
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- build:js js/home-lib.min.js -->
+        <script src="assets/global/plugins/jquery.min.js"></script>
+        <script src="js/lib/jquery.cookie.js"></script>
+        <script src="js/lib/underscore.js"></script>
+        <script src="js/lib/backbone.js"></script>
+        <script src="js/lib/jquery.i18n.properties.min.js"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/global/plugins/js.cookie.min.js"></script>
+        <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script src="assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
+        <script src="assets/global/scripts/app.min.js"></script>
+        <script src="assets/layouts/layout4/scripts/layout.js"></script>
+        <script src="js/lib/jquery.tooltip.js"></script>
+        <!-- endbuild -->
+        <script>
+            var roleUser = localStorage.getItem('ROLE_USER');
+            var userID;
+
+            if(!(roleUser && roleUser !== '')){
+                location.href = 'index.html';
+            }
+
+            var act_en = function() {
+                $(".act").html("inactive");
+                $(".portlet-body p").css({
+                    "text-align":"left",
+                    "line-height":"18px",
+                    "padding-top":"100px"
+                });
+                $(".portlet-body h4").css("font-size","16px");
+            };
+            if(localStorage.getItem("language") === "en"){act_en()};
+            /*var module_bg = [
+                {},
+                {}, {
+                    status_on: "img/esonly.png",
+                    status_off: "img/esonlyBG.png"
+                }, {
+                    status_on: "../img/echart.png",
+                    status_off: "../img/echartBG.png"
+                }, {
+                    status_on: "../img/monitor.png",
+                    status_off: "../img/monitorBG.png"
+                }, {
+                    status_on: "../img/algorithm.png",
+                    status_off: "../img/algorithmBG.png"
+                }
+            ];*/
+            var userN = localStorage.getItem("ROLE_USER");
+            $.ajax({
+                async : true,
+                cache : false,
+                type : "post",
+                url : "/api//options.open",
+                data : {},
+                success : function(data) { // 请求成功后处理函数。
+                    $('#userAvatar_s').attr('src',data.image);
+                    $("#head_name").html(data.name);
+                    $(".avatar").attr("src",data.image);
+                    $(".username").html(data.sitename);
+                    userID=data.user_id;
+                    initMessageInfo(userID);
+                },
+                error : function() {// 请求失败处理函数
+                }
+            });
+            $.ajax({
+                async: false,
+                type: "get",
+                dataType: "json",
+                data: {
+                    user_name: userN
+                },
+                url: "/api/jurisdiction.open?cmd=WEL:GETBYUSERNAME",
+                success: function (data) {
+                    console.log(data);
+                    $.each(data, function (index, values) {
+                        (function () {
+                            /*var imgIndex = parseInt(values.role_type);
+                            if (module_bg[imgIndex] == undefined) {
+                                return false;
+                            }*/
+                            var cont = $(".box>div:first-of-type").clone();
+                            cont.attr("data-id", values.id);
+                            cont.attr("data-type", values.role_type);
+                            cont.find("h4").html(values.role_name);
+                            cont.find("p").html(values.role_desc);
+                            if (values.role_status == 0) {
+                                cont.find(".portlet-title").css("background-image", "url(" + values.off_image + ")");
+                                cont.children().removeClass("cli");
+                                cont.find("p,h4").css("cursor", "default");
+                            } else {
+                                cont.find(".portlet-title").css("background-image", "url(" + values.on_image + ")");
+                                cont.find(".portlet-title>span,.portlet-title>div").hide();
+                            }
+
+                            cont.appendTo(".box");
+                            cont.show();
+                        })();
+
+                    });
+                }
+            });
+            function initMessageInfo(userID){
+                $(".indexMessage li").remove();
+                $.ajax({
+                url:"/api/notice.open?cmd=WEL:SELECTUNREADNOTICE",
+                async : true,
+                cache : false,
+                type : "post",
+                data : {
+                    user_id:userID
+                },
+                success:function(data){
+//                  console.log(data)
+                    messageData=data;
+                    var tpl="";
+                    $(".messageNum").html(data.length)
+                    if(data.length>0){
+                        for(var i=0;i<data.length && i <10;i++){
+                            var messageType = data[i].type;
+                            var label_type = "label-info";
+                            var fabell = "fa fa-bell-o";
+                            if("1"==messageType||"2"==messageType){
+                                label_type = "label-info";
+                            }
+                            if("3"==messageType){
+                                label_type = "label-warning";
+                            }
+                            if("4"==messageType){
+                                label_type = "label-danger";
+                                fabell="fa fa-bolt";
+                            }
+                            if("1"==messageType){
+                                $.bootstrapGrowl("<a href='javascript:uploadParse("+i+")'>"+data[i].content+"</a>");
+                                tpl+='<li onclick=uploadParse('+i+');><a>'+
+                                    '<span class="time">'+data[i].time+'</span><span class="details">'+
+                                    '<span class="label label-sm label-icon '+label_type+'" style="padding: 4px 3px 4px 4px;">'+
+                                    '<i class="'+fabell+'"></i></span> '+data[i].content+' </span></a></li>';
+                            }else{
+                                tpl+='<li><a href="javascript:closeThisMessage('+data[i].id+","+userID+');">'+
+                                    '<span class="time">'+data[i].time+'</span><span class="details">'+
+                                    '<span class="label label-sm label-icon '+label_type+'" style="padding: 4px 3px 4px 4px;">'+
+                                    '<i class="'+fabell+'"></i></span> '+data[i].content+' </span></a></li>';
+                            }
+                        }
+                        $(".indexMessage").append(tpl)
+                    }else{
+
+                    }
+                }
+            })
+
+            }
+            setInterval(function(){
+                initMessageInfo(userID);
+            },60000)
+            $("body").delegate(".cli", "click", function () {
+                localStorage.setItem("ROLE", $(this).parent().attr("data-id"));
+                localStorage.setItem("ROLE_ID", $(this).parent().attr("data-type"));
+                window.location.href = "index.html";
+            });
+             //注销用户信息
+            var Dy;
+            var Dy_zh={
+                    a:"确认要注销账户?",
+                    b:"注销",
+                    c:"取消"
+            };
+            var Dy_en={
+                    a:"Do you want to log out?",
+                    b:"Log out",
+                    c:"Cancel"
+            };
+            localStorage.getItem("language")=="zh"?Dy=Dy_zh:Dy=Dy_en;
+            $('#exit').click(function() {
+                swal({
+                    title: Dy.a,
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: Dy.b,
+                    cancelButtonText: Dy.c,
+                    closeOnConfirm: false,
+                    closeOnCancel: true
+                }, function() {
+                    $.cookie("rmbUser", "false", {
+                        expire: -1
+                    });
+                    $.cookie("user_name", "", {
+                        expires: -1
+                    });
+                    $.cookie("pass_word", "", {
+                        expires: -1
+                    });
+                    $.post('/api/index.open?cmd=WEL:DESTROY', function(text, status) {
+                        location.href = 'login.html';
+                    });
+                    localStorage.removeItem('ROLE_USER');
+                })
+            })
+            $("#lock").click(function() {
+                localStorage.setItem("history", window.location.href);
+                window.location.href = "static/lock.html";
+            })
+        </script>
+    </body>
+</html>

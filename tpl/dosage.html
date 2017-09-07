@@ -1,0 +1,81 @@
+<link rel="stylesheet" type="text/css" href="css/dosage.css"/>
+<style type="text/css">
+	.copy_cancel p:nth-child(1){background: url(img/cancelfile.png) 20% 43% no-repeat;padding-left: 2px;height: 35px;}
+	.input_button p:nth-child(1){
+		margin-left: 70%;
+	}
+	.dosageBorder{
+		width: 100%;
+		height: 100%;
+		border: 1px solid #ddd;
+		box-sizing: border-box;
+		background-color: #fff;
+	}
+</style>
+<div class="dosageBorder">
+	<div class="countent">
+		<div class="dosageLine1">
+			<a href="#/upload" id="upLoadBtn" class="J_btn">上传新数据</a>
+			<div class="useShow" style="display: inline-block;vertical-align: top;;">
+				<div class="dosageBarBox">
+					<div id="dosageTxt">
+						<p>总量：<span>500M</span>&nbsp;
+							剩余：<span>200M</span>
+						</p>
+					</div>
+					<div id="dosageBar">
+						<div id="dosageBar_blue">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="chekBtnBox">
+				<p id="allCheck" class="J_btn">全选/全不选</p>
+				<p id="delChose" class="J_btn">删除选中</p>
+			</div>
+		</div>
+		<div class="projectDataBox">
+			<div class="table_outer">
+				<table width="100%" border="0" style="border-collapse: collapse;">
+					<tr class="tr_head">
+						<td style="width: 30px;">选择</td>
+						<td style="width: 59px;">序号</td>
+						<td style="width: 152px;">上传时间</td>
+						<td style="width: 152px;">失效时间</td>
+						<td>数据文件</td>
+						<td>所属项目</td>
+						<td style="width: 142px;">数据量</td>
+					</tr>
+					<tr class="tr_mid" data-chose="0">
+						<td><input type="checkBox" name="name" value="" class="checkBoxInput"></td>
+						<td class="listNum">1</td>
+						<td>2016-01-01</td>
+						<td>2016-01-01</td>
+						<td>Zip1;Zip2</td>
+						<td>活动项目</td>
+						<td>100M</td>
+					</tr>
+					<tr class="tr_mid" data-chose="0">
+						<td><input type="checkBox" name="name" value="" class="checkBoxInput"></td>
+						<td class="listNum">2</td>
+						<td>2016-01-01</td>
+						<td>2016-01-01</td>
+						<td>Zip1;Zip2</td>
+						<td>活动项目</td>
+						<td>100M</td>
+					</tr>
+					<tr class="tr_mid" data-chose="0">
+						<td><input type="checkBox" name="name" value="" class="checkBoxInput"></td>
+						<td class="listNum">3</td>
+						<td>2016-01-01</td>
+						<td>2016-01-01</td>
+						<td>Zip1;Zip2</td>
+						<td>活动项目</td>
+						<td>100M</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

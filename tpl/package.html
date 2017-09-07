@@ -1,0 +1,106 @@
+<link rel="stylesheet" type="text/css" href="css/check.css" />
+<link href="assets/pages/css/invoice-2.min.css" rel="stylesheet" type="text/css">
+<link href="assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css">
+<link href="assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.skinHTML5.css" rel="stylesheet" type="text/css">
+<div class="page-head">
+	<div class="page-title">
+		<h1 data-i18n="package_package">升级套餐</h1>
+	</div>
+</div>
+
+<div class="row mod2" style="color:#678098!important;display:block;">
+	<div class="col-xs-12">
+		<div class="portlet light bg-white" style="height:auto;">
+			<div class="portlet-title">
+				<div class="caption">
+					<span data-i18n="package_select" class="caption-subject bold uppercase font-dark" style="color:#678098!important">选择套餐</span>
+				</div>
+				<div class="actions">
+					<!-- <a href="#/check" class="btn btn-default" data-i18n="package_back">返回账单</a> -->
+				</div>
+			</div>
+			<div class="portlet-body row">
+				<div class="col-md-9 col-xs-12">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="mt-element-ribbon bg-grey-steel">
+								<div data-i18n="package_traffic" class="ribbon ribbon-round ribbon-color-primary uppercaseribbon ribbon-shadow">选择数据配置</div>
+								<div class="ribbon-content">
+									<input id="range_01" class="trange" />
+									<p style="margin-top:25px;">
+										<b data-i18n="package_more">更多定制化需求，可联系销售服务人员咨询</b>
+										<a data-i18n="package_online" style="text-decoration:underline;color:#678098!important" data-toggle="modal" data-target="#myModal">在线填写需求</a>
+										<a data-i18n="package_call" style="text-decoration:underline;color:#678098!important" id="trans">通知销售人员</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="mt-element-ribbon bg-grey-steel">
+								<div data-i18n="package_contract" class="ribbon ribbon-round ribbon-color-primary uppercaseribbon ribbon-shadow">选择合同期</div>
+								<div class="ribbon-content">
+									<input id="range_02" class="trange" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="mt-element-ribbon bg-grey-steel">
+								<div data-i18n="package_storage" class="ribbon ribbon-round ribbon-color-primary uppercaseribbon ribbon-shadow">选择数据存储有效期</div>
+								<div class="ribbon-content">
+									<input id="range_03" class="trange" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<div class="portlet light bordered" style="height:auto;">
+						<div class="portlet-title">
+							<div class="caption">
+								<span data-i18n="package_pricing" class="caption-subject bold uppercase font-dark" style="color:#678098!important">金额结算</span>
+							</div>
+						</div>
+						<div class="portlet-body clearfix bill">
+							<div data-i18n="package_selected">已选</div>
+							<div><span data-i18n="package_traf">数据配置：</span><input type="text" id="mspan1" class="mspan" value="" readonly/></div>
+							<div><span data-i18n="package_cont">合同期：</span><input type="text" id="mspan2" class="mspan" value="" readonly/></div>
+							<div><span data-i18n="package_stora">数据有效存储期：</span><input type="text" id="mspan3" class="mspan" value="" readonly/></div><br>
+							<p></p>
+							<div><span data-i18n="package_Amount">套餐合计：</span><span id="mspan4"></span></div><br>
+							<button class="btn blue pull-right" id="sure" data-i18n="package_Confirm">确认订单</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="color:#678098!important">
+	<div class="modal-dialog">
+		<form class="modal-content" action="/api/check.open?cmd=WEL:INSERTPACKAGEDemand" method="post" accept-charset="UTF-8" id="myForm">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel" data-i18n="package_des">描述您的需求，我们将尽快为您安排专家解答</h4>
+			</div>
+			<div class="modal-body form-group">
+				<input data-place="package_name" type="text" class="form-control" name="mName" placeholder="姓名" id="f_name" required="required" maxlength="20" /><br/>
+				<input type="email" class="form-control" name="mEmail" placeholder="Email" id="f_email" required="required" maxlength="20" /><br/>
+				<input data-place="package_theme" type="text" class="form-control" name="mTheme" placeholder="主题" id="f_theme" required="required" maxlength="20" /><br/>
+				<textarea data-place="package_main" class="form-control" rows="3" name="mMain" placeholder="正文" style="resize: none;" id="f_main" required="required" maxlength="100"></textarea>
+			</div>
+			<div class="modal-footer">
+				<button data-i18n="package_cancle" type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button data-i18n="package_sumb" type="submit" class="btn btn-primary" id="go_sumb">提交</button>
+			</div>
+		</form>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal -->
+</div>

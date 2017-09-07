@@ -1,0 +1,142 @@
+<link rel="stylesheet" type="text/css" href="css/serch.css" />
+<link href="assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<div class="page-head">
+	<div class="page-title">
+		<h1 data-i18n="search_page">智能搜索</h1>
+	</div>
+</div>
+<div class="portlet-title" style="margin-bottom:10px;">
+	<select id="pro_choose" data-style="btn border-blue font-blue btn-default dropdown-toggle">
+
+				</select>
+	<div id="reportrange" class="btn border-blue font-blue btn-default dropdown-toggle">
+		<i class="fa fa-calendar"></i> &nbsp;
+		<span></span>
+		<em id="start" style="display:none;"></em>
+		<em id="end" style="display:none;"></em>
+		<b class="fa fa-angle-down"></b>
+	</div>
+	<div class="actions pull-right">
+		<button type="button" class="btn green-haze btn-outline uppercase" data-i18n="search_mission" id="createmission" data-toggle="modal" data-target="#missionModal" disabled>生成监控任务</button>
+	</div>
+</div>
+<div class="contentDiv row" style="color:#678098!important">
+	<div class="col-xs-12">
+		<div class="portlet light portlet-fit portlet-datatable" style="margin-bottom:0">
+
+		</div>
+		<div class="mid_znss mid_znssx clearfix" id="serchNav">
+			<div class="mid_znssH clearfix">
+				<div class="mid_znssHP1 clearfix input-icon right">
+					<input class="searchinfo form-control" data-place="search_shu" id="txt" type="text" placeholder="输入搜索词" />
+					<i class="fa fa-close" style="display:none;"></i>
+					<ul id="append" class="list"></ul>
+				</div>
+				<input type="button" value="搜 索" class="serchC J_btn btn blue" data-val="search_search">
+				<input type="button" value="在结果中搜索" class="serchE J_btn btn blue" data-val="search_result" disabled>
+			</div>
+			<div class="mid_znssH1 clearfix">
+				<div class="mid_znssH1Span2" data-i18n="search_hot">热搜词:</div>
+				<div class="mid_znssH1Span3 clearfix">
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="end_znss2 mid_znssx clearfix">
+			<div class="end_znss2Div">
+				<ul class="znss2-right">
+					<li class="znss2-rightH clearfix"></li>
+					<li class="znss2-rightM"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tabinfo">
+			<div class="qhtrue"><em data-i18n="search_tab1">搜索</em> <b></b> <em data-i18n="search_tab2">的结果</em><span></span><i>×</i></div>
+		</div>
+		<div class="tableinfo">
+			<form method="post" enctype="multipart/form-data" name="export_excel" id="export_excel" action="DownLoadExcel"></form>
+			<div class="tablex" data-cont="">
+				<button class="dt-button J_btn tableSave btn purple btn-outline">
+					<span>CSV</span>
+				</button>
+				<table class="tableSort table table-striped table-hover dataTable dtr-inline" style="color:#678098!important">
+					<thead>
+						<tr>
+							<th class="tableorder" data-i18n="search_index">序号</th>
+							<th class="tabletime" data-i18n="search_time" data-tit="search_title" title="为中国-北京（GMT+8）时间，系根据日志原文中记录的时间/时区转化而来。当日志使用GMT等其他时区记录时，此处显示与日志原文有差异，但不影响搜索结果">时间</th>
+							<th class="datainfo" data-i18n="search_log">日志</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="end_znss1">
+				<ul class="znss1_numx row">
+					<li class="col-md-7 col-sm-12 col-xs-12">
+						<div class="chart1" style="height:330px;"></div>
+					</li>
+					<li class="col-md-5 col-sm-12 col-xs-12">
+						<div class="chart2" style="height:330px;"></div>
+						<div class="btn-group region-select-group searchCountrySelect" style="left:35px;top:27px;display:none;">
+							<button class="btn btn-outline dropdown-toggle control" style="padding: 2px 5px;" type="button" data-toggle="dropdown" aria-expanded="false">
+								<e data-i18n='search_changeMapType'>切换区域</e>
+								<i class="fa fa-angle-down"></i>
+							</button>
+							<ul class="dropdown-menu region-select" role="menu">
+								<li><a href="javascript:void(0);" data-value="World" data-i18n='search_changeMapWorld'>世界地图</a></li>
+								<li><a href="javascript:void(0);" data-value="China" data-i18n='search_changeMapCN'>中国地图</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="box2" id="loadbox">
+
+	</div>
+</div>
+<div class="modal fade" id="missionModal" tabindex="-1" role="dialog" aria-labelledby="missionModalLabel" data-backdrop="false" aria-hidden="true" style="color:#678098!important">
+	<div class="modal-dialog">
+		<form class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" data-i18n="search_createmission">设置监控任务</h4>
+			</div>
+			<div class="modal-body form-group missonbox">
+				<p id="pone"><b data-i18n="search_jcont">监控内容</b>：<span></span></p>
+				<p id="ptwo"><b data-i18n="search_jproject">监控项目</b>：<span></span></p>
+				<p class="clearfix"><b data-i18n="search_jfrequency">监控频率</b>：<input class='form-control frechoose frechoose1' type='number' min='1' max='59' value='1' />
+					<select id="freq1" class="form-control">
+					<option value="1" data-unit="MM" data-i18n="search_jm">分钟</option>
+					<option value="60" data-unit="HH" data-i18n="search_jh">小时</option>
+					<option value="1440" data-unit="DD" data-i18n="search_jd">天</option>
+					<option value="10080" data-unit="WW" data-i18n="search_jw">周</option>
+				</select></p>
+				<p class="clearfix" style="margin-top:3px;"><b data-i18n="search_jrange">监控范围</b>：<input class='form-control frechoose frechoose2' type='number' min='1' max='59' value='1' />
+					<select id="freq2" class="form-control">
+					<option value="1" data-unit="MM" data-i18n="search_jm">分钟</option>
+					<option value="60" data-unit="HH" data-i18n="search_jh">小时</option>
+					<option value="1440" data-unit="DD" data-i18n="search_jd">天</option>
+					<option value="10080" data-unit="WW" data-i18n="search_jw">周</option>
+				</select></p>
+				<p id="pfive"><b data-i18n="search_jcretime">创建日期</b>：<span></span></p>
+				<p><input type="checkbox" id="toEmail" /><i data-i18n="search_jemail">发送监控结果至邮箱</i></p>
+				<p><input type="email" class="form-control" placeholder="email" readonly="readonly" id="emailadd" /></p>
+				<p class="clearfix"><i data-i18n="search_jsh">触发邮件通知阀值</i></p>
+				<p><select class="form-control" id="freq3" disabled>
+						<option value="1">></option>
+						<option value="2"><</option>
+						<option value="3">=</option>
+					</select>
+					<input type="number" class="form-control" id="threshold" readonly/>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="search_cancle">取消</button>
+				<button type="button" class="btn btn-primary ladda-button" id="mission_sumb" data-style="zoom-in"><span class="ladda-label" data-i18n="search_ok">确定</span></button>
+			</div>
+		</form>
+	</div>
+</div>

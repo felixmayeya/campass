@@ -1,0 +1,311 @@
+.stepTitle{
+	line-height: 43px;
+	margin-top: 0 !important;
+	font-weight: normal;
+}
+.dropz{
+	height: 200px;
+}
+.upLoadA{
+	height: 150px;
+	color: #aaa;
+	background: none;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	text-align: center;
+	background-image: url(../img/plus.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 15%;
+	line-height: 40px;
+}
+.upLoadA input{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.upLoadABox,.resolvingBox{
+	padding: 0;
+    margin-bottom: 10px !important;
+}
+.upLoadBox,.portlet-body{
+	padding-bottom: 0px !important;
+}
+.selectPro{
+	display: inline-block;
+	vertical-align: top;
+}
+.fileList{
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.fileList ul {
+  height: 100%;
+  width: 100%;
+	overflow: inherit;
+}
+.fileList ul li {
+  height: 100%;
+  line-height: 33px;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  position: relative;
+  box-sizing: border-box;
+}
+.tabbable-custom{
+	overflow: inherit;
+	margin-bottom: 0px !important;
+}
+.cancelFile {
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #737373;
+}
+#submitBtn{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.resolvingBox{
+	display: none;
+	overflow-x: scroll;
+}
+.formatTable select{
+	width: 100%;
+	border: none;
+}
+.formatTable th{
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	min-width:50px;
+}
+.formatTable td{
+	border-left: 1px solid #ddd;
+	padding: 3px 5px;
+}
+.formatTable{
+	border: 1px solid #ddd;
+	border-left: none;
+	width:100%;
+}
+.resolvingBox button{
+	margin-top: 20px;
+	float: right;
+}
+.stepTitle{
+	font-size: 16px !important;
+}
+.scriptUploadBox{
+	margin: 0 auto;
+	padding: 25px 0;
+	display: none;
+}
+.scriptUploadBox:nth-child(2){
+	display: block;
+}
+.scriptUploadBox_title{
+	font-size: 18px;
+	margin: 15px 0;
+}
+.scriptUploadBox1 input,.scriptUploadBox1 select{
+	height: 40px;
+	width: 100%;
+	outline: none;
+	border: none;
+	margin: 5px auto;
+	background-color: rgba(135,174,221,0.1);
+	position: relative;
+	padding: 0 15px;
+	box-sizing: border-box;
+	color: #87abdd;
+}
+.scriptUploadBox1 input+i,.scriptUploadBox1 select+i{
+	position: absolute;
+	margin-top: 18px;
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	border: 1px solid #87abdd;
+	color: #87abdd;
+	line-height: 14px;
+	border-radius: 50%;
+	margin-left: 5px;
+	transform: rotate(180deg);
+	cursor: help;
+  text-indent: 1.5px;
+}
+.scriptUploadBox1 input::-webkit-input-placeholder { /* WebKit browsers */
+��color:#87abdd !important;
+}
+.scriptUploadBox1 input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:#87abdd !important;
+}
+.scriptUploadBox1 input::-moz-placeholder { /* Mozilla Firefox 19+ */
+��color:#87abdd !important;
+}
+.scriptUploadBox1 input::-ms-input-placeholder { /* Internet Explorer 10+ */
+��color:#87abdd !important;
+}
+.scriptUploadBox1 i+div{
+	z-index: 1000;
+	text-align: left;
+	width:300px;
+	background-color: #f7f7f7;
+	border: 1px solid #ddd;
+	padding: 10px;
+	display: inline-block;
+	position: absolute;
+    margin-top: -17px;
+    right: 5px;
+	display: none;
+}
+.scriptUploadBox1 i:hover+div{
+	display: inline-block;
+}
+.scriptUploadBox1 i+div span{
+	color: #87abdd;
+}
+.scriptUploadBox_tips{
+	width: 100%;
+	margin: 15px auto;
+	text-align: left;
+}
+.buildBtn,.downloadScript{
+	border-radius: 2px;
+  	margin: 20px auto;
+}
+.scriptUploadBox2_content{
+	padding: 15px;
+}
+.nextPage{
+	float: right;
+	cursor: pointer;
+}
+.nextPage:hover,.prevPage:hover{
+	color: #87abdd;
+}
+.prevPage{
+	float: left;
+	cursor: pointer;
+}
+.scriptUploadBox3_content{
+	margin: 15px auto;
+	text-align: left;
+}
+.scriptUploadBox4_content{
+	width: 40%;
+	margin: 15px auto;
+	text-align: left;
+}
+.cancelFile{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	text-decoration: underline;
+	cursor: pointer;
+	color: #737373;
+}
+.cancelFile:hover{
+	color: #87abdd;
+}
+.progress .bar{
+	background-color: #87abdd;
+	display: block;
+	width: 0%;
+	height: 15px;
+	border-radius: 2px;
+	z-index: 2;
+}
+.progress .percent{
+	height: 20px;
+	float: right;
+	margin-top: -6px;
+	display: inline-block;
+	color: #fff;
+}
+.highLight{
+	background-color: rgba(135,174,221,0.1);
+	margin: 15px 0;
+	word-wrap: break-word;
+}
+.highLight-b{
+	background-color: rgba(135,174,221,0.1);
+	margin: 15px 0;
+	color: #87abdd;
+}
+.P_2em{
+	padding:0 2em;
+}
+.P_4em{
+	padding:0 4em;
+}
+.P_6em{
+	padding:0 6em;
+}
+.bootstrap-select>.dropdown-toggle{
+	width:auto !important;
+}
+.modal-body .icheckbox_square-blue{
+	margin-right:10px;
+}
+.modal-backdrop{
+  z-index: 100;
+}
+.modal{
+	z-index: 501;
+}
+.modal-dialog{
+	z-index: 502;
+}
+.modal{
+	background: rgba(0,0,0,0.5);
+	vertical-align: middle;
+	z-index: 500;
+}
+.modal-dialog{
+	width: 300px;
+	margin-top:20%;
+	z-index: 501;
+}
+.modal-body ul li{
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+	line-height: 30px;
+	font-size: 16px;
+	text-align: left;
+}
+.tabbable-custom>.tab-content{
+	border:none !important;
+}
+
+.panel-title a {
+    font-size: 14px;
+    color:#678098;
+}
+
+.scriptUploadBox1 h5 {
+    background: #f5f5f5;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: left;
+    border: solid 1px #d5d5d5
+}

@@ -1,0 +1,88 @@
+.titleProIdSpan {
+    font-size: 16px;
+    color: #5b9bd1;
+    font-weight: bold;
+}
+
+.titleProId {
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5b9bd1;
+}
+
+.titleProSpan {
+    font-size: 14px;
+    color: #5b9bd1;
+    font-weight: bold;
+}
+
+.titlePro {
+    padding-left: 15px;
+    font-size: 14px;
+    color:#678098;
+}
+
+.chartbox {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#linecharts {
+    margin: 0 auto;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    width: auto;
+}
+
+.ctitle {
+    font-size: 16px;
+    color: #5b9bd1;
+    font-weight: bold;
+}
+
+.chartablebox {
+    padding: 0 20px;
+    height: 460px;
+    overflow-y: auto;
+}
+
+#chartable {
+    width: 100%;
+    text-align: center;
+}
+
+#chartable>thead {
+    border-bottom: 1px solid #eef1f5;
+}
+
+#chartable>thead>tr>th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #678098;
+}
+
+#chartable>tbody>tr>td {
+	padding:2px 0;
+    line-height: 30px;
+    color: #678098;
+}
+
+#chartable_wrapper{
+	min-height:450px;
+}
+
+.dataTables_wrapper .dataTables_processing{
+    top:225px;
+	margin-top:-40px;
+	height:80px;
+	padding:0;
+	line-height:80px;
+	background:RGBA(255,255,255,0.8);
+	z-index:1000;
+	font-size:18px;
+	font-weight:bold;
+	letter-spacing:3px;
+	color:#678098;
+}

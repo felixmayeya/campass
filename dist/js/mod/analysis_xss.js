@@ -1,0 +1,1 @@
+define(["text!/tpl/analysis_xss.html","chart","smChart","css!/css/analysis.css","analysis","xssCharts"],function(s,a,n){function t(){swiper=void 0,cvrPageMark=0,$(".page-content").html(s),analysis(a,n),changeLanguage("analysis"),xssBtn(a,n)}return{render:t}});

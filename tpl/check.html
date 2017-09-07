@@ -1,0 +1,188 @@
+<link rel="stylesheet" type="text/css" href="css/check.css" />
+<link href="assets/pages/css/invoice-2.min.css" rel="stylesheet" type="text/css">
+<div class="page-head">
+    <div class="page-title">
+        <h1 data-i18n="check_check">我的账单</h1>
+    </div>
+</div>
+<div class="page-head">
+    <div class="page-title">
+        <p style="text-indent:2em;font-size:14px;"><i data-i18n="check_endto" style="font-size:14px;">截止至</i> <span id="dead"></span></p>
+    </div>
+</div>
+<div class="row" id="row1" style="color:#678098!important">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="portlet light bg-white">
+            <div class="portlet-title">
+                <div class="caption">
+                    <span data-i18n="check_traffic" class="caption-subject bold uppercase font-dark" style="color:#678098!important">套餐及数据用量</span>
+                </div>
+            </div>
+            <div class="portlet-body clearfix">
+                <div class="col-xs-12 table-responsive billtable" style="padding:0;">
+                    <table class="table table-light" style="color:#678098!important;text-align:center;">
+                        <thead>
+                            <tr>
+                                <th class="invoice-title text-center" data-i18n="check_function">功能模块</th>
+                                <th class="invoice-title text-center" data-i18n="check_used">本期已用</th>
+                                <th class="invoice-title text-center" data-i18n="check_left">套餐剩余</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <ul class="list-unstyled topul">
+                    <li><i data-i18n="check_traf" class="ii">数据配置：</i> <span class="topul1 ii"></span></li>
+                    <li><i data-i18n="check_account" class="ii">账户有效期：</i> <span class="topul1 ii"></span> <i data-i18n="check_to" class="ii">至</i> <span class="topul1 ii"></span></li>
+                    <li><i data-i18n="check_storage" class="ii">数据有效存储期：</i> <span class="topul1 ii"></span></li>
+                    <li><i data-i18n="check_used" class="ii">本期已用：</i> <span class="topul1 ii"></span></li>
+                    <li><i data-i18n="check_left" class="ii">套餐剩余：</i> <span class="topul1 ii"></span></li>
+                </ul> -->
+                <!-- <button class="btn blue si" id="level" data-i18n="check_upgrade">升级套餐</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="portlet light bg-white">
+            <div class="portlet-title">
+                <div class="caption">
+                    <span data-i18n="check_this" class="caption-subject bold uppercase font-dark" style="color:#678098!important">本期账单</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <ul class="list-unstyled topul">
+                    <li><i data-i18n="check_thispa" class="ii">本期套餐金额：</i> <span class="topul2 ii"></span></li>
+                    <li><i data-i18n="check_thisover" class="ii">本期超额费用：</i> <span class="topul2 ii"></span></li>
+                    <li><i data-i18n="check_balance" class="ii">总账户余额：</i> <span class="topul2 ii"></span></li>
+                </ul>
+                <!-- <div class="bold sum si"><i data-i18n="check_thisum" style="line-height: 34px;font-size: 16px;">本期合计：</i> <span class="topul2"></span></div> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="portlet light bg-white">
+            <div class="portlet-title checkhead">
+                <div class="caption">
+                    <span data-i18n="check_enquiry" class="caption-subject bold uppercase font-dark" style="color:#678098!important">已出账单</span>
+                </div>
+                <form method="post" enctype="multipart/form-data" name="bill_down" id="bill_down" action="DownLoadPDF">
+                    <input type="hidden" name="initFileName" id="initFileName">
+                    <input type="hidden" name="initFilePath" id="initFilePath">
+                </form>
+                <div class="actions">
+                    <a href="javascript:void(0);" class="all_check btn blue btn-outline" data-i18n="check_all">全选</a>
+                    <a href="javascript:void(0);" class="btn green btn-outline" data-i18n="check_down">下载</a>
+                    <a href="javascript:void(0);" class="btn yellow  btn-outline" data-i18n="check_email">邮件</a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="check_table">
+                    <table class="table table-light">
+                        <thead>
+                            <tr class="uppercase">
+                                <th data-i18n="check_period">账期</th>
+                                <th data-i18n="check_state">更新时间</th>
+                                <th data-i18n="check_opar">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mod1" id="printdiv" style="color:#678098!important">
+    <div class="col-xs-12">
+        <div class="portlet light bg-white" style="height:auto;" id="hprint">
+            <div class="portlet-title" id="dis1">
+                <div class="caption">
+                    <span data-i18n="check_detail" class="caption-subject bold uppercase font-dark" style="color:#678098!important">账单详情</span>
+                </div>
+                <button class="btn blue pull-right" style="width:120px;display:none;" id="m_print" data-i18n="check_print">打印</button>
+            </div>
+            <div class="portlet-body">
+                <div class="invoice-content-2">
+                    <div class="row invoice-head">
+                        <div class="col-md-7 col-xs-6">
+                            <div class="invoice-logo">
+                                <img src="img/LOGO.png" width="300" />
+                                <h1 data-i18n="check_elebill" class="uppercase" style="color:#678098!important">&nbsp;&nbsp;&nbsp;电子对账单</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-xs-6">
+                            <div class="company-address" style="color:#678098!important">
+                                <span class="bold uppercase" data-i18n="check_company">北京开数科技有限公司</span>
+                                <br> <a href="http://www.open01.com" target="_blank" style="color:#678098!important">www.open01.com</a>
+                                <br> 010 8272 4800
+                                <br> <a href="mailto:support@open01.com" style="color:#678098!important">support@open01.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row invoice-cust-add mod3 mod4">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <h2 class="invoice-title uppercase" data-i18n="check_Account">账户名</h2>
+                            <p class="invoice-desc" style="color:#678098!important;word-break:break-word;"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <h2 class="invoice-title uppercase" data-i18n="check_Company">公司</h2>
+                            <p class="invoice-desc" style="color:#678098!important"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <h2 class="invoice-title uppercase" data-i18n="check_Period">账期</h2>
+                            <p class="invoice-desc" id="billtime" style="color:#678098!important"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <h2 class="invoice-title uppercase" data-i18n="check_Package">开通功能</h2>
+                            <p class="invoice-desc" style="color:#678098!important"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <h2 class="invoice-title uppercase" data-i18n="check_Tbill">本期金额（元）</h2>
+                            <p class="invoice-desc" style="color:#678098!important"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <h2 class="invoice-title uppercase" data-i18n="check_Tsum">本期合计（元）</h2>
+                            <p class="invoice-desc" style="color:#678098!important"></p>
+                        </div>
+                    </div>
+                    <div class="row invoice-body mod3" id="dbox">
+                        <div class="col-xs-12 invoice-title dbtop" style="border-bottom:1px solid #9ea8b7" data-i18n="check_Details">明细</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tbbox">
+	<div class="col-xs-12 table-responsive tablebox" style="padding:0;display:none;">
+		<div class="titlee"></div>
+	    <table class="table table-hover" style="color:#678098!important">
+	        <thead>
+	            <tr>
+	                <th class="invoice-title text-center" data-i18n="check_Date">日期</th>
+	                <th class="invoice-title text-center" data-i18n="check_New">新上传数据量</th>
+	                <th class="invoice-title text-center" data-i18n="check_Accumulation">期内累计数据量</th>
+	                <th class="invoice-title text-center" data-i18n="check_Overrunn">新增超额数据量</th>
+	                <th class="invoice-title text-center" data-i18n="check_Source" width="140">数据来源</th>
+	                <th class="invoice-title text-center" data-i18n="check_Duration">计费存储期</th>
+	                <th class="invoice-title text-center" data-i18n="check_sAmount" width="100">金额</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	        </tbody>
+	    </table>
+	    <div class="col-xs-7 col-xs-offset-5">
+	        <p class="invoice-desc text-right" style="color:#678098!important"><i data-i18n="check_Currentamount">本期金额总计： </i><span class="dis2"></span></p>
+	    </div>
+	    <div class="col-xs-7 col-xs-offset-5">
+	        <p class="invoice-desc text-right" style="color:#678098!important"><i data-i18n="check_Packagecovered">套餐支付： </i><span class="dis2"></span>，<i data-i18n="check_Overrun">套餐外支付： </i><span class="dis2"></span></p>
+	    </div>
+	    <div class="col-xs-2 text-right">
+	        
+	    </div>
+	</div>
+</div>
+<iframe id="printIframe" target="_blank"></iframe>

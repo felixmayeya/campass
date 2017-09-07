@@ -1,0 +1,1 @@
+define(["text!/tpl/analysis_pv.html","chart","smChart","css!/css/analysis.css","analysis","pvCharts"],function(a,s,n){function t(){swiper=void 0,cvrPageMark=0,$(".page-content").html(a),analysis(s,n),changeLanguage("analysis"),pvBtn(s,n)}return{render:t}});

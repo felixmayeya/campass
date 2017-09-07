@@ -1,0 +1,171 @@
+.actions {
+    padding: 10px 0!important;
+}
+
+.portlet {
+    height: 320px;
+}
+
+.topul li {
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.ii{
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.si {
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+}
+
+.sum, .sum>span {
+    line-height: 34px;
+    font-size: 16px;
+}
+
+.check_table {
+    height: 180px;
+    overflow-y: hidden;
+}
+
+.check_table td {
+    text-align: center;
+}
+
+.range_01 {
+    margin-top: 50px;
+}
+
+.ribbon-content p b {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.ribbon-content p a {
+    font-size: 14px;
+    line-height: 30px;
+    float: right;
+    margin-right: 10%;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    z-index: 500;
+}
+
+.modal-dialog {
+    margin-top: 20%;
+    z-index: 501;
+}
+
+.modal-body ul li {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.modal-body .icheckbox_square-blue {
+    margin-right: 10px;
+}
+
+.modal-backdrop {
+    z-index: 100;
+}
+
+.modal {
+    z-index: 501;
+}
+
+.modal-dialog {
+    z-index: 502;
+}
+
+.bill {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.bill>p {
+    height: 0;
+    border-top: 1px dashed #333;
+    margin: 24px 0;
+    font-size: 14px;
+}
+
+.bill span {
+    font-size: 14px;
+}
+
+.bill div {
+    font-size: 14px;
+}
+
+.bill input {
+    display: inline-block;
+    width: auto;
+    border: none;
+    outline: none;
+}
+
+.invoice-cust-add h2 {
+    margin: 20px 0 10px 0;
+}
+
+.invoice-cust-add p {
+    margin: 20px 0;
+}
+
+.invoice-subtotal {
+    margin-top: 20px;
+}
+
+.invoice-subtotal p {
+    line-height: 34px;
+    font-size: 15px;
+}
+
+.mod3 {
+    display: none;
+}
+
+.invoice-content-2 .invoice-body td, .invoice-content-2 .invoice-body th {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+table td, table th {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+#printIframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.titlee{
+	width:100%;
+	height:60px;
+	padding:0 15px;
+	margin-top:15px;
+	font-size:20px;
+	line-height:60px;
+	background:#E9ECF3;
+	color:#678098;
+	text-align-left;
+}

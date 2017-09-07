@@ -1,0 +1,243 @@
+<style>
+.swiper-slide {
+    height: 580px;
+    background-color: #fff;
+    overflow: hidden;
+}
+</style>
+<div class="page-head">
+    <div class="page-title">
+        <h1 id="analysisTitle" data-i18n="analysis_sql_title"></h1>
+    </div>
+</div>
+<div class="analysisPageHead page-head breadcrumb">
+    <select id="selectPro" class="analysisPro_choose" data-style="btn border-blue font-blue btn-default dropdown-toggle">
+        <option value="" data-fileid="0" data-id="" data-i18n="analysis_emptyproject"></option>
+    </select>
+    <div id="reportrange" class="btn border-blue font-blue btn-default dropdown-toggle">
+        <i class="fa fa-calendar"></i> &nbsp;
+        <span></span>
+        <b class="fa fa-angle-down"></b>
+    </div>
+    <div class="page-toolbar">
+    	<button type="button" class="btn red btn-outline uppercase" id="viewAttackSource" data-i18n="analysis_viewSource"></button>
+        <button type="button" class="btn blue-hoki btn-outline uppercase" id="dataListBtn" data-i18n="analysis_viewData"></button>
+        <button type="button" class="btn green btn-outline uppercase" id="addChart" data-i18n="analysis_addtodashboard"></button>
+    	<button type="button" class="btn purple-soft btn-outline uppercase" data-i18n="analysis_search_page" id="analysisToSearchBtn"></button>
+    </div>
+</div>
+<div class="portlet swiperBox tabbable-custom nav-justified">
+    <ul class="controlList swiper-pagination"></ul>
+    <div class="portlet swiper-container v-swiper swiper-no-swiping">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB echarts_bar1 vertical_bar">
+                    </div>
+                    <ul class="smChartsImgBox row smCharts-0">
+                    </ul>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-0">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps"></th>
+                                    <th class="sorting" data-i18n="analysis_TimeStamp"></th>
+                                    <th class="sorting" data-i18n="analysis_sql_attackNum"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB byip horizontal_bar">
+                        <div class="echarts_vBar1" draggable="false">
+                        </div>
+                        <div class="echarts_lBar1">
+                        </div>
+                    </div>
+                    <ul class="smChartsImgBox row smCharts-1">
+                    </ul>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-1">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps"></th>
+                                    <th class="sorting" data-i18n="analysis_sql_sqlIp"></th>
+                                    <th class="sorting" data-i18n="analysis_sql_attackNum"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB byurl horizontal_bar">
+                        <div class="echarts_vBar2" draggable="false">
+                        </div>
+                        <div class="echarts_lBar2">
+                        </div>
+                    </div>
+                    <ul class="smChartsImgBox row smCharts-2">
+                    </ul>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-2">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps"></th>
+                                    <th class="sorting">
+                                        <div class="urlTd" data-i18n="analysis_sql_sqlURL" style="width:'+($('.txtData>.countent').width())*0.65+'px'+';"></div>
+                                    </th>
+                                    <th class="sorting" data-i18n="analysis_sql_attackNum"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiperImg col-md-12">
+                    <div class="swiperB echarts_bar2 bystatus stack_vertical_bar">
+                    </div>
+                    <ul class="smChartsImgBox row smCharts-3">
+                    </ul>
+                </div>
+                <div class="txtData col-md-12">
+                    <div class="countent">
+                        <div class="portlet-title">
+                            <div class="page-toolbar dataTextBtn">
+                                <button class="dt-button buttons-print btn dark btn-outline mt-ladda-btn ladda-button printBtn" data-loading-text="Loading..." data-style="slide-right">Print</button>
+                                <button class="dt-button buttons-pdf buttons-html5 btn green btn-outline pdfBtn">PDF</button>
+                                <button class="dt-button buttons-csv buttons-html5 btn purple btn-outline csvBtn">CSV</button>
+                            </div>
+                        </div>
+                        <table border="0" bordercolor="#999999" cellspacing="0" cellpadding="0" class="table table-responsive dataTable table-3">
+                            <thead>
+                                <tr>
+                                    <th class="sorting" data-i18n="analysis_steps"></th>
+                                    <th class="sorting" data-i18n="analysis_TimeStamp"></th>
+                                    <th class="sorting" data-i18n="analysis_attackSucNum"></th>
+                                    <th class="sorting" data-i18n="analysis_attackSucPercent"></th>
+                                    <th class="sorting" data-i18n="analysis_attackRedNum"></th>
+                                    <th class="sorting" data-i18n="analysis_attackRedPercent"></th>
+                                    <th class="sorting" data-i18n="analysis_attackFailNum"></th>
+                                    <th class="sorting" data-i18n="analysis_attackFailPercent"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="general">
+    <div class="swiperT row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-green-sharp">
+                                           <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                       <small class="font-green-sharp"><e data-i18n="analysis_ttimes"></e></small>
+                                       </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_sql_box1"></small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-bar-chart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-red-haze">
+                                           <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                       <small class="font-red-haze">%</small>
+                                       </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_sql_box2"></small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-graph"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-blue-sharp">
+                                           <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                     <small class="font-blue-sharp"><e data-i18n="analysis_items"></e></small>
+                                       </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_sql_box3"></small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 bordered">
+                <div class="display">
+                    <div class="number">
+                        <h3 class="font-purple-soft">
+                                           <span class="counterSpan" data-counter="counterup" data-value="0"></span>
+                       <small class="font-purple-soft">%</small>
+                                       </h3>
+                        <small class="font-purple-soft">&nbsp; <span><span></small>
+                        <br />
+                        <small data-i18n="analysis_sql_box4"></small>
+                    </div>
+                    <div class="icon">
+                        <i class="icon-graph"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<iframe id="printReportIframe" target="_blank"></iframe>

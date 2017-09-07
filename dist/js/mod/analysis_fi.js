@@ -1,0 +1,1 @@
+define(["text!/tpl/analysis_fi.html","chart","smChart","css!/css/analysis.css","analysis","fiCharts"],function(a,s,n){function t(){swiper=void 0,cvrPageMark=0,$(".page-content").html(a),analysis(s,n),changeLanguage("analysis"),fiBtn(s,n)}return{render:t}});

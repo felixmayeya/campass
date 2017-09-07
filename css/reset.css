@@ -1,0 +1,66 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img ,span{ margin:0; padding:0; }
+fieldset, img { border:none; }
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+ul, ol { list-style:none; }
+a { color:#666; text-decoration:none; }
+i{font-style: normal;}
+*{
+	font-family: "微软雅黑", "Microsoft Yahei", "arial", "sans-serif";
+	font-size: 12px;
+}
+.page-content{
+	position: relative;
+}
+.noPad{
+	padding: 0 !important;
+}
+.page-title{
+	color:#678098 !important;
+}
+.page-head .page-title>h1{
+	color:#678098 !important;
+}
+
+.mb10 {margin-bottom: 10px}
+
+.page-footer > p {text-align: center;}
+
+.role_menu{
+	background:#fff!important;
+  border: 1px solid #eee!important;
+  z-index: 1000!important;
+	min-width: 175px!important;
+}
+
+.uncli {
+		cursor: normal!important;
+		color:#ccc!important;
+}
+
+.page-sidebar .page-sidebar-menu>li>a.nav-link-disabled,.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a.nav-link-disabled {
+    color: #ccc
+}
+
+.page-sidebar .page-sidebar-menu>li>a.nav-link-disabled>i,.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a.nav-link-disabled>i {
+    color: #ccc
+}
+
+.page-sidebar .page-sidebar-menu>li.active.open>a.nav-link-disabled, .page-sidebar .page-sidebar-menu>li.active>a.nav-link-disabled, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a.nav-link-disabled, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a.nav-link-disabled{
+	 color: #ccc;
+}
+
+.page-sidebar .page-sidebar-menu>li.active.open>a.nav-link-disabled>i, .page-sidebar .page-sidebar-menu>li.active>a.nav-link-disabled>i, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a.nav-link-disabled>i, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a.nav-link-disabled>i{
+	 color: #ccc;
+}
+
+.page-sidebar .page-sidebar-menu>li>a.nav-link-disabled>.arrow:before,.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a.nav-link-disabled>.arrow:before {
+    color: #ccc
+}
+
+.page-sidebar .page-sidebar-menu>li.open>a.nav-link-disabled>.arrow.open:before, .page-sidebar .page-sidebar-menu>li.open>a.nav-link-disabled>.arrow:before, .page-sidebar .page-sidebar-menu>li:hover>a.nav-link-disabled>.arrow.open:before, .page-sidebar .page-sidebar-menu>li:hover>a.nav-link-disabled>.arrow:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a.nav-link-disabled>.arrow.open:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a.nav-link-disabled>.arrow:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a.nav-link-disabled>.arrow.open:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a.nav-link-disabled>.arrow:before{
+	color: #ccc
+}
+
+/*切换区域样式*/
+
+.region-select-group {position: absolute; right: 150px; top: 10px; z-index: 500; display: inline-block;}
